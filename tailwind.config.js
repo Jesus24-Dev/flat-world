@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/renderer/index.html"],
+  content: ["./src/renderer/index.html", "./src/views/views.js"],
   theme: {
     extend: {
       colors: {
@@ -35,6 +35,9 @@ module.exports = {
         Ubuntu: ["Ubuntu"],
         Poppins: ["Poppins"],
         "Open-Sans": ["Open Sans"],
+      },
+      backgroundImage: {
+        intro: ["url('../images/fondo-inicio.png')"],
       },
     },
   },
