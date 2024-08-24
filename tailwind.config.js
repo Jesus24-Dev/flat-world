@@ -38,6 +38,7 @@ module.exports = {
       },
       backgroundImage: {
         intro: ["url('../images/fondo-inicio.png')"],
+        principal: ["url('../images/fondo-principal.jpg')"],
       },
     },
   },
