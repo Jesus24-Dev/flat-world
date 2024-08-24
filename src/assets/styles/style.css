@@ -99,9 +99,26 @@
 }
 
 .botonFormulario {
-  @apply text-yellow-500 font-bold bg-blue-950 rounded-lg p-4 active font-Open-Sans:bg-blue-900 hover:shadow-inner hover:shadow-white;
+  @apply text-yellow-500 font-bold bg-blue-950 rounded-lg p-4 font-Open-Sans active:bg-blue-900 hover:shadow-inner hover:shadow-white;
 }
 
 .inputFormulario {
-  @apply h-12 px-2 text-orange-300 placeholder .font-Open-Sans:text-orange-300 outline-none rounded-lg focus:placeholder:transition-transform focus:placeholder:duration-300 focus:placeholder:-translate-y-3.5 focus:text-xs ease-in duration-300 bg-blue-100;
+  @apply h-12 px-2 text-orange-300 font-Open-Sans placeholder:text-orange-300 outline-none rounded-lg focus:placeholder:transition-transform focus:placeholder:duration-300 focus:placeholder:-translate-y-3.5 focus:text-xs ease-in duration-300 bg-blue-100;
+}
+
+.card {
+  @apply col-start-6 row-start-2 col-span-4 row-span-10 grid grid-cols-4 grid-rows-10 p-4 bg-secondary-100 rounded-3xl;
+  box-shadow: 10px 10px #f99507;
+}
+
+.card-img {
+  @apply col-start-1 row-start-1 col-span-4 row-span-4 rounded-t-3xl w-full h-full;
+}
+
+.card-body {
+  @apply col-start-1 row-start-5 col-span-4 row-span-4 flex flex-col justify-evenly w-4/5;
+}
+
+.card-button {
+  @apply text-center text-primary-950 font-bold text-xl rounded-2xl border-4 border-primary-950 w-3/5 p-4 font-Open-Sans bg-secondary-400  hover:bg-secondary-500 active:opacity-75;
 }
