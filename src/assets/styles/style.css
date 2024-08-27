@@ -122,3 +122,25 @@
 .card-button {
   @apply text-center text-primary-950 font-bold text-xl rounded-2xl border-4 border-primary-950 w-3/5 p-4 font-Open-Sans bg-secondary-400  hover:bg-secondary-500 active:opacity-75;
 }
+
+.leccion {
+  @apply flex flex-col items-center;
+}
+.bloqueada {
+  @apply bg-gradient-to-b from-secondary-100 to-secondary-400 border-4 border-blue-950 rounded-2xl  justify-around;
+}
+.desbloqueada {
+  @apply bg-cover bg-center rounded-2xl border-4 border-secondary-400 justify-center gap-4;
+}
+.leccion-h3 {
+  @apply text-primary-950 font-semibold text-xl text-center font-Ubuntu;
+}
+.leccion-desbloqueada-a {
+  @apply text-primary-950 bg-secondary-400 font-semibold text-xl py-2 px-4 rounded-lg font-Open-Sans;
+}
+.leccion-desbloqueada-a:hover {
+  @apply bg-secondary-500;
+}
+.leccion-desbloqueada-a:active {
+  @apply bg-secondary-600;
+}
