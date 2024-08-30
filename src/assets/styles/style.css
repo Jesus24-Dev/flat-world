@@ -144,3 +144,19 @@
 .leccion-desbloqueada-a:active {
   @apply bg-secondary-600;
 }
+
+.modulo-h1 {
+  @apply text-center col-span-12 text-3xl text-primary-950 font-bold font-Ubuntu;
+}
+
+.modulo-h2 {
+  @apply text-2xl font-semibold text-primary-950 text-center font-Poppins;
+}
+
+.modulo-main {
+  @apply w-full overflow-hidden;
+}
+
+.modulo-contenedor {
+  @apply flex transition-transform duration-500;
+}
