@@ -153,10 +153,6 @@
   @apply text-2xl font-semibold text-primary-950 text-center font-Poppins;
 }
 
-.modulo-main {
-  @apply w-full overflow-hidden;
-}
-
 .modulo-contenedor {
   @apply flex transition-transform duration-500;
 }
