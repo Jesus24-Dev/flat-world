@@ -5,7 +5,8 @@
   "main": "src/main/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "tailwindcss -i ./src/assets/styles/style.css -o ./src/assets/styles/main.css --watch"
+    "build": "tailwindcss -i ./src/assets/styles/style.css -o ./src/assets/styles/main.css --watch",
+    "dev": "vite ."
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "ejs": "^3.1.10",
     "konva": "^9.3.14",
     "postcss": "^8.4.41",
+    "raphael": "^2.3.0",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7",
     "tailwindcss": "^3.4.10",
