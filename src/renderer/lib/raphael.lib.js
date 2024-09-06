@@ -2,107 +2,131 @@
 ------------------------------------TRIANGULO A1------------------------------------
 --------------------------------------------------------------------------------- */
 
-const contenedorTriangulo = document.querySelector("#contenedorTriangulo");
-const trianguloBaseContenedor = document.querySelector("#trianguloBase");
-const atributosTriangulo = {
-  "stroke-width": 5,
-  stroke: "#74fc7d",
-  fill: "#00b30d",
-};
+// const contenedorTriangulo = document.querySelector("#contenedorTriangulo");
+// const trianguloBaseContenedor = document.querySelector("#trianguloBase");
+// const atributosTriangulo = {
+//   "stroke-width": 5,
+//   stroke: "#74fc7d",
+//   fill: "#00b30d",
+// };
 
-const paperIntroduccionTriangulo = Raphael(contenedorTriangulo);
+// const paperIntroduccionTriangulo = Raphael(contenedorTriangulo);
 
-let linea1 = paperIntroduccionTriangulo.path("M116 32 L116 277");
-let linea2 = paperIntroduccionTriangulo.path("M232 32 L232 277");
-let linea3 = paperIntroduccionTriangulo.path("M348 32 L348 277");
+// let linea1 = paperIntroduccionTriangulo.path("M116 32 L116 277");
+// let linea2 = paperIntroduccionTriangulo.path("M232 32 L232 277");
+// let linea3 = paperIntroduccionTriangulo.path("M348 32 L348 277");
 
-let lineas = [linea1, linea2, linea3];
+// let lineas = [linea1, linea2, linea3];
 
-for (let linea of lineas) {
-  linea.attr({ "stroke-width": 5, stroke: "#74fc7d" });
-}
+// for (let linea of lineas) {
+//   linea.attr({ "stroke-width": 5, stroke: "#74fc7d" });
+// }
 
-let triangulo = paperIntroduccionTriangulo.path("M103 277 L360 277 L232 32 Z");
-triangulo.attr(atributosTriangulo);
+// let triangulo = paperIntroduccionTriangulo.path("M103 277 L360 277 L232 32 Z");
+// triangulo.attr(atributosTriangulo);
 
-const paperTrianguloBase = Raphael(trianguloBaseContenedor);
-let trianguloBase = paperTrianguloBase.path("M32 400 L432 400 L250 32 Z");
-trianguloBase.attr(atributosTriangulo);
+// const paperTrianguloBase = Raphael(trianguloBaseContenedor);
+// let trianguloBase = paperTrianguloBase.path("M32 400 L432 400 L250 32 Z");
+// trianguloBase.attr(atributosTriangulo);
 
-const triangulosPorLado = document.querySelector("#triangulosPorLado");
+// const triangulosPorLado = document.querySelector("#triangulosPorLado");
 
-const paperTriangulosLados = Raphael(triangulosPorLado);
-let trianguloEquilatero = paperTriangulosLados.path(
-  "M64 177 L247 177 L155 24 Z"
-);
-let trianguloIsosceles = paperTriangulosLados.path(
-  "M400 177 L543 177 L471 24 Z"
-);
-let trianguloEscaleno = paperTriangulosLados.path(
-  "M696 177 L879 177 L820 24 Z"
-);
+// const paperTriangulosLados = Raphael(triangulosPorLado);
+// let trianguloEquilatero = paperTriangulosLados.path(
+//   "M64 177 L247 177 L155 24 Z"
+// );
+// let trianguloIsosceles = paperTriangulosLados.path(
+//   "M400 177 L543 177 L471 24 Z"
+// );
+// let trianguloEscaleno = paperTriangulosLados.path(
+//   "M696 177 L879 177 L820 24 Z"
+// );
 
-const setTrianguloLados = paperTriangulosLados.set();
+// const setTrianguloLados = paperTriangulosLados.set();
 
-setTrianguloLados.push(
-  trianguloEquilatero,
-  trianguloIsosceles,
-  trianguloEscaleno
-);
+// setTrianguloLados.push(
+//   trianguloEquilatero,
+//   trianguloIsosceles,
+//   trianguloEscaleno
+// );
 
-setTrianguloLados.forEach((triangulo) => {
-  triangulo.attr(atributosTriangulo);
-});
+// setTrianguloLados.forEach((triangulo) => {
+//   triangulo.attr(atributosTriangulo);
+// });
 
-const triangulosPorAngulo = document.querySelector("#triangulosPorAngulo");
+// const triangulosPorAngulo = document.querySelector("#triangulosPorAngulo");
 
-const paperTriangulosAngulo = Raphael(triangulosPorAngulo);
-let trianguloAcutangulo = paperTriangulosAngulo.path(
-  "M64 120 L247 177 L247 24 Z"
-);
-let trianguloRectangulo = paperTriangulosAngulo.path(
-  "M400 177 L543 177 L400 24 Z"
-);
-let trianguloObtusangulo = paperTriangulosAngulo.path(
-  "M696 177 L879 177 L920 24 Z"
-);
+// const paperTriangulosAngulo = Raphael(triangulosPorAngulo);
+// let trianguloAcutangulo = paperTriangulosAngulo.path(
+//   "M64 120 L247 177 L247 24 Z"
+// );
+// let trianguloRectangulo = paperTriangulosAngulo.path(
+//   "M400 177 L543 177 L400 24 Z"
+// );
+// let trianguloObtusangulo = paperTriangulosAngulo.path(
+//   "M696 177 L879 177 L920 24 Z"
+// );
 
-const setTrianguloAngulo = paperTriangulosAngulo.set();
+// const setTrianguloAngulo = paperTriangulosAngulo.set();
 
-setTrianguloAngulo.push(
-  trianguloAcutangulo,
-  trianguloRectangulo,
-  trianguloObtusangulo
-);
+// setTrianguloAngulo.push(
+//   trianguloAcutangulo,
+//   trianguloRectangulo,
+//   trianguloObtusangulo
+// );
 
-setTrianguloAngulo.forEach((triangulo) => {
-  triangulo.attr(atributosTriangulo);
-});
+// setTrianguloAngulo.forEach((triangulo) => {
+//   triangulo.attr(atributosTriangulo);
+// });
 
-const calculoTriangulo = document.querySelector("#calculoTriangulo");
+// const calculoTriangulo = document.querySelector("#calculoTriangulo");
 
-const paperCalculoTriangulo = Raphael(calculoTriangulo);
+// const paperCalculoTriangulo = Raphael(calculoTriangulo);
 
-let trianguloCalculos = paperCalculoTriangulo.path(
-  "M32 280 L500 280 L360 32 Z"
-);
+// let trianguloCalculos = paperCalculoTriangulo.path(
+//   "M32 280 L500 280 L360 32 Z"
+// );
 
-trianguloCalculos.attr(atributosTriangulo);
-let lineaAltura = paperCalculoTriangulo.path("M360 32 L360 280");
-lineaAltura.attr({ "stroke-width": 5, stroke: "red" });
+// trianguloCalculos.attr(atributosTriangulo);
+// let lineaAltura = paperCalculoTriangulo.path("M360 32 L360 280");
+// lineaAltura.attr({ "stroke-width": 5, stroke: "red" });
 
-let a = paperCalculoTriangulo.text(200, 110, "a");
-let b = paperCalculoTriangulo.text(450, 110, "b");
-let c = paperCalculoTriangulo.text(300, 300, "c");
-let h = paperCalculoTriangulo.text(330, 150, "h");
+// let a = paperCalculoTriangulo.text(200, 110, "a");
+// let b = paperCalculoTriangulo.text(450, 110, "b");
+// let c = paperCalculoTriangulo.text(300, 300, "c");
+// let h = paperCalculoTriangulo.text(330, 150, "h");
 
-let setLetras = paperCalculoTriangulo.set();
-setLetras.push(a, b, c, h);
+// let setLetras = paperCalculoTriangulo.set();
+// setLetras.push(a, b, c, h);
 
-setLetras.forEach((letra) => {
-  letra.attr({ "font-size": 24, fill: "red", "font-weight": "bold" });
-});
+// setLetras.forEach((letra) => {
+//   letra.attr({ "font-size": 24, fill: "red", "font-weight": "bold" });
+// });
 
 /* ---------------------------------------------------------------------------------
 ------------------------------------CUADRADO A2-------------------------------------
 --------------------------------------------------------------------------------- */
+const cuadrilateros = document.querySelector("#cuadrilateros");
+const cuadrilateroPaper = Raphael(cuadrilateros);
+const cuadrilateroAtributos = {
+  fill: "#fe00f5",
+  stroke: "#ff7afa",
+  "stroke-width": 5,
+};
+
+let cuadradoEjemplo = cuadrilateroPaper.rect(96, 32, 250, 250);
+cuadradoEjemplo.attr(cuadrilateroAtributos);
+let rectanguloEjemplo = cuadrilateroPaper.rect(496, 32, 400, 250);
+rectanguloEjemplo.attr(cuadrilateroAtributos);
+
+const cuadrado = document.querySelector("#cuadrado");
+
+const cuadradoPaper = Raphael(cuadrado);
+let cuadradoForma = cuadradoPaper.rect(116, 64, 400, 400);
+cuadradoForma.attr(cuadrilateroAtributos);
+
+const rectangulo = document.querySelector("#rectangulo");
+
+const rectanguloPaper = Raphael(rectangulo);
+let rectanguloForma = rectanguloPaper.rect(116, 128, 450, 300);
+rectanguloForma.attr(cuadrilateroAtributos);
