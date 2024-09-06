@@ -11,15 +11,13 @@
       despeguen del suelo
     </h2>
   </article>
-  <aside class="col-start-5 row-start-4 col-span-5 row-span-5">
-    Triangulo aqui
-  </aside>
+  <div
+    class="col-start-5 row-start-4 col-span-4 row-span-5"
+    id="contenedorTriangulo"
+  ></div>
   <article class="col-start-9 row-start-5 col-span-3 row-span-2">
     <h2 class="modulo-h2">¡Eso sería un polígono!</h2>
   </article>
-  <aside class="col-start-5 row-start-4 col-span-5 row-span-5">
-    Triangulo aqui
-  </aside>
   <a
     href="#"
     class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
@@ -30,7 +28,8 @@
 <section class="cuadricula" id="defineTriangulo">
   <h1 class="modulo-h1">Triangulo</h1>
   <article
-    class="col-start-2 row-start-3 col-span-5 row-span-8 bg-green-400 border-8 border-green-200"
+    class="col-start-2 row-start-3 col-span-5 row-span-7"
+    id="trianguloBase"
   ></article>
   <article
     class="col-start-7 row-start-3 col-span-5 row-span-7 flex flex-col justify-around"
@@ -49,19 +48,23 @@
 <section class="cuadricula" id="defineTrianguloPorLados">
   <h1 class="modulo-h1">Segun sus lados</h1>
   <article
-    class="col-start-3 row-start-4 col-span-8 row-span-4 flex justify-between"
+    class="col-start-3 row-start-4 col-span-8 row-span-1 flex justify-between"
   >
-    <aside>
+    <aside class="w-full">
       <h2 class="modulo-h2">Equilatero</h2>
     </aside>
-    <aside>
-      <h2 class="modulo-h2">Isoceles</h2>
+    <aside class="w-full">
+      <h2 class="modulo-h2">Isosceles</h2>
     </aside>
-    <aside>
+    <aside class="w-full">
       <h2 class="modulo-h2">Escaleno</h2>
     </aside>
   </article>
-  <article class="col-start-3 row-start-9 col-span-8 row-span-2">
+  <div
+    class="col-start-3 row-start-5 col-span-8 row-span-4"
+    id="triangulosPorLado"
+  ></div>
+  <article class="col-start-3 row-start-10 col-span-8 row-span-1">
     <h2 class="modulo-h2">
       Haz click sobre los triangulos para saber mas de ellos
     </h2>
@@ -78,17 +81,21 @@
   <article
     class="col-start-3 row-start-4 col-span-8 row-span-4 flex justify-between"
   >
-    <aside>
+    <aside class="w-full">
       <h2 class="modulo-h2">Acutangulo</h2>
     </aside>
-    <aside>
+    <aside class="w-full">
       <h2 class="modulo-h2">Rectangulo</h2>
     </aside>
-    <aside>
+    <aside class="w-full">
       <h2 class="modulo-h2">Obtusangulo</h2>
     </aside>
   </article>
-  <article class="col-start-3 row-start-9 col-span-8 row-span-2">
+  <div
+    class="col-start-3 row-start-5 col-span-8 row-span-4"
+    id="triangulosPorAngulo"
+  ></div>
+  <article class="col-start-3 row-start-10 col-span-8 row-span-1">
     <h2 class="modulo-h2">
       Haz click sobre los triangulos para saber mas de ellos
     </h2>
@@ -102,6 +109,10 @@
 
 <section class="cuadricula" id="areaPerimetro">
   <h1 class="modulo-h1">Calculo de Area y perimetro</h1>
+  <div
+    class="col-start-2 row-start-4 col-span-5 row-span-5"
+    id="calculoTriangulo"
+  ></div>
   <a
     href="#"
     class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
@@ -118,3 +129,5 @@
     >Click para continuar</a
   >
 </section>
+
+<script type="module" src="./lib/raphael/raphael.mod1.a1.js"></script>
