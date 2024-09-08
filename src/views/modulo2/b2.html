@@ -1,9 +1,10 @@
-<section class="cuadricula">
+<section class="cuadricula" id="perimetroTrapecio">
   <h1 class="modulo-h1">Problema <span>1</span></h1>
   <h1 class="modulo-h1">Trapecios</h1>
-  <article
-    class="row-start-4 col-start-2 row-span-6 col-span-4 bg-red-400"
-  ></article>
+  <div
+    class="row-start-4 col-start-2 row-span-6 col-span-4"
+    id="perimetroTrapecioContainer"
+  ></div>
   <article
     class="row-start-4 col-start-7 row-span-7 col-span-5 bg-primary-950 flex flex-col p-4 gap-4"
   >
@@ -34,3 +35,44 @@
     </aside>
   </article>
 </section>
+<!-- ========== Start Area Trapecio ========== -->
+
+<!-- ========== End Area Trapecio ========== -->
+<section class="cuadricula" id="areaTrapecio">
+  <h1 class="modulo-h1">Problema <span>2</span></h1>
+  <h1 class="modulo-h1">Trapecios</h1>
+  <div
+    class="row-start-4 col-start-2 row-span-6 col-span-4"
+    id="areaTrapecioContainer"
+  ></div>
+  <article
+    class="row-start-4 col-start-7 row-span-7 col-span-5 bg-primary-950 flex flex-col p-4 gap-4"
+  >
+    <aside
+      class="bg-white h-5/6 rounded-lg flex flex-col items-center justify-around"
+    >
+      <h2 class="modulo-h2">
+        Un trapecio tiene bases de 10 cm y 6 cm, y una altura de 4 cm. ¿Cuál es
+        su área?
+      </h2>
+      <a
+        href="#"
+        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
+        >Ver respuesta</a
+      >
+    </aside>
+    <aside class="flex">
+      <input
+        type="text"
+        class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
+        placeholder="Respuesta"
+      />
+      <button
+        class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+      >
+        ->
+      </button>
+    </aside>
+  </article>
+</section>
+<script type="module" src="./lib/raphael/raphael.mod2.b2.js"></script>
