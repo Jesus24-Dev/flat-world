@@ -9,8 +9,148 @@
       type="module"
       src="../../node_modules/raphael/raphael.min.js"
     ></script>
+    <script src="../../node_modules/animejs/lib/anime.min.js"></script>
   </head>
   <body>
+    <div class="grid grid-cols-12 grid-rows-12 h-screen p-4 bg-principal">
+      <!--CARD DESIGN STARTS HERE-->
+      <aside
+        class="row-start-1 col-start-1 row-span-12 col-span-2 bg-primary-950 flex flex-col justify-evenly items-center flex-wrap p-4"
+        id="datosEstudiante"
+      >
+        <img
+          src="../assets/images/user.png"
+          alt=""
+          class="rounded-full w-1/2"
+        />
+        <div class="flex flex-col gap-2">
+          <h5
+            class="text-center font-bold text-secondary-400 text-lg font-Poppins"
+          >
+            Jesus Sirit
+          </h5>
+          <h3
+            class="text-center font-bold text-secondary-400 text-lg font-Poppins"
+          >
+            Un gusto verte!
+          </h3>
+        </div>
+        <p
+          class="text-center font-bold text-secondary-400 text-lg font-Poppins"
+        >
+          Seccion <span>A</span>
+        </p>
+        <p
+          class="text-center font-bold text-secondary-400 text-lg font-Poppins"
+        >
+          Modulos completados <span>1/4</span>
+        </p>
+        <p
+          class="text-center font-bold text-secondary-400 text-lg font-Poppins"
+        >
+          Lecciones terminadas <span>6/32</span>
+        </p>
+        <button
+          class="text-center font-bold text-secondary-400 text-lg font-Poppins hover:text-secondary-500 active:text-secondary-600"
+        >
+          Salir
+        </button>
+      </aside>
+      <div class="card card-yellow" id="carta1">
+        <img src="../assets/images/modulo1-card.jpg" alt="" class="card-img" />
+        <div class="card-body">
+          <h3 class="text-secondary-400 font-semibold text-lg font-Ubuntu">
+            Primer modulo
+          </h3>
+          <h2 class="text-primary-950 font-bold text-2xl font-Ubuntu">
+            Conociendo las figuras geometricas
+          </h2>
+          <p class="text-secondary-400 font-Poppins">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eaque
+            totam saepe delectus dolorum cumque provident. Laboriosam, veniam
+            nihil? Delectus?
+          </p>
+        </div>
+        <div class="row-span-2 col-span-4 flex justify-center items-center">
+          <button class="card-button">Empezar la leccion</button>
+        </div>
+      </div>
+
+      <div
+        class="botones row-start-11 col-start-11 col-span-2 flex items-end justify-around"
+      >
+        <button class="botonFormulario">Atras</button>
+        <button class="botonFormulario w-1/2">Siguiente</button>
+      </div>
+    </div>
+
+    <section class="cuadricula">
+      <div class="card card-blue" id="carta2">
+        <img src="../assets/images/modulo2-card.jpg" alt="" class="card-img" />
+        <div class="card-body">
+          <h3 class="text-primary-950 font-semibold text-lg font-Ubuntu">
+            Segundo modulo
+          </h3>
+          <h2 class="text-secondary-400 font-bold text-2xl font-Ubuntu">
+            Los distintos tipos de trapecio.
+          </h2>
+          <p class="text-primary-950 font-Poppins">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eaque
+            totam saepe delectus dolorum cumque provident. Laboriosam, veniam
+            nihil? Delectus?
+          </p>
+        </div>
+        <div class="row-span-2 col-span-4 flex justify-center items-center">
+          <button class="card-button">Empezar la leccion</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cuadricula">
+      <div class="card card-yellow" id="carta3">
+        <img src="../assets/images/modulo3-card.jpg" alt="" class="card-img" />
+        <div class="card-body">
+          <h3 class="text-secondary-400 font-semibold text-lg font-Ubuntu">
+            Tercer modulo
+          </h3>
+          <h2 class="text-primary-950 font-bold text-2xl font-Ubuntu">
+            Volumen en poliedros regulares e irregulares.
+          </h2>
+          <p class="text-secondary-400 font-Poppins">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eaque
+            totam saepe delectus dolorum cumque provident. Laboriosam, veniam
+            nihil? Delectus?
+          </p>
+        </div>
+        <div class="row-span-2 col-span-4 flex justify-center items-center">
+          <button class="card-button">Empezar la leccion</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cuadricula">
+      <div class="card card-blue" id="carta4">
+        <img src="../assets/images/modulo4-card.png" alt="" class="card-img" />
+        <div class="card-body">
+          <h3 class="text-primary-950 font-semibold text-lg font-Ubuntu">
+            Cuarto modulo
+          </h3>
+          <h2 class="text-secondary-400 font-bold text-2xl font-Ubuntu">
+            Cuerpos geometricos en la vida real
+          </h2>
+          <p class="text-primary-950 font-Poppins">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eaque
+            totam saepe delectus dolorum cumque provident. Laboriosam, veniam
+            nihil? Delectus?
+          </p>
+        </div>
+        <div class="row-span-2 col-span-4 flex justify-center items-center">
+          <button class="card-button">Empezar la leccion</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="./lib/anime/principal.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
