@@ -53,6 +53,8 @@ module.exports = {
         c4: ["url('../images/modulos/modulo3/c-4.png')"],
         c5: ["url('../images/modulos/modulo3/c-5.png')"],
         c6: ["url('../images/modulos/modulo3/c-6.png')"],
+        d1: ["url('../images/modulos/modulo4/d-1.png')"],
+        d2: ["url('../images/modulos/modulo4/d-2.png')"],
       },
     },
   },
