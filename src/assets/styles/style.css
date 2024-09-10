@@ -107,8 +107,17 @@
 }
 
 .card {
-  @apply col-start-6 row-start-2 col-span-4 row-span-10 grid grid-cols-4 grid-rows-10 p-4 bg-secondary-100 rounded-3xl;
+  @apply col-start-6 row-start-2 col-span-4 row-span-10 grid grid-cols-4 grid-rows-10 p-4  rounded-3xl;
+}
+
+.card-yellow {
+  @apply bg-secondary-100;
   box-shadow: 10px 10px #f99507;
+}
+
+.card-blue {
+  @apply bg-primary-50;
+  box-shadow: 10px 10px #009eff;
 }
 
 .card-img {
