@@ -1,20 +1,18 @@
 <section class="cuadricula" id="defineCubo">
   <h1 class="modulo-h1">Cubo</h1>
-  <h2 class="modulo-h2 col-start-2 row-start-4 col-span-6 row-span-5">
+  <h2 class="modulo-h2 col-start-2 row-start-4 col-span-5 row-span-5">
     Es un sólido geométrico que tiene seis caras cuadradas iguales. Imagina una
     caja perfecta, donde todas las caras son cuadrados del mismo tamaño y todos
     los ángulos son rectos.
   </h2>
-  <div
-    class="col-start-9 row-start-4 col-span-3 row-span-5 bg-green-600 border-8 border-green-200"
-  ></div>
+  <div class="col-start-8 row-start-3 col-span-4 row-span-6" id="cubo1"></div>
 </section>
 <section class="cuadricula" id="partesCubo">
   <h1 class="modulo-h1">Partes de un cubo</h1>
-  <h2 class="modulo-h2 col-start-2 row-start-2 col-span-3 row-span-2">
-    Puedes hacer click en cualquier parte para saber mas de ella.
-  </h2>
-  <div class="col-start-3 row-start-3 col-span-8 row-span-8 bg-green-100"></div>
+  <div
+    class="col-start-3 row-start-2 col-span-8 row-span-8"
+    id="cuboFigura"
+  ></div>
 </section>
 
 <section class="cuadricula" id="calculosCubo">
@@ -23,14 +21,18 @@
     class="col-start-2 row-start-2 col-span-5 row-span-7 flex flex-col items-center"
   >
     <h2 class="modulo-h2">Area</h2>
-    <div class="h-20 bg-green-200 w-3/4"></div>
-    <h2 class="modulo-h2">: 6 x Lado²</h2>
+    <div class="w-3/4">
+      <img src="../assets/images/figuras/cubo.png" alt="" />
+    </div>
+    <h2 class="modulo-h2">6 x Lado²</h2>
   </article>
   <article
     class="col-start-7 row-start-2 col-span-5 row-span-7 flex flex-col items-center"
   >
     <h2 class="modulo-h2">Volumen</h2>
-    <div class="h-20 bg-green-200 w-3/4"></div>
+    <div class="w-3/4">
+      <img src="../assets/images/figuras/cubo.png" alt="" />
+    </div>
     <h2 class="modulo-h2">Lado³</h2>
   </article>
 </section>
@@ -38,9 +40,7 @@
 <section class="cuadricula" id="preguntaCubo">
   <h1 class="modulo-h1">Problema</h1>
   <h1 class="modulo-h1">Cubo</h1>
-  <article
-    class="row-start-4 col-start-2 row-span-6 col-span-4 bg-green-200"
-  ></article>
+  <div class="row-start-4 col-start-2 row-span-6 col-span-4" id="cubo2"></div>
   <article
     class="row-start-4 col-start-7 row-span-7 col-span-5 bg-primary-950 flex flex-col p-4 gap-4"
   >
@@ -70,3 +70,4 @@
     </aside>
   </article>
 </section>
+<script type="module" src="./lib/three/three.mod3.c3.js"></script>
