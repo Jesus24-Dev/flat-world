@@ -1,5 +1,3 @@
-import * as THREE from "three";
-
 function crearCubo(contenedor) {
   // Escena, cámara y renderizador
   const scene = new THREE.Scene();

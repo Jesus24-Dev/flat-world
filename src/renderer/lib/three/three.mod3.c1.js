@@ -1,5 +1,3 @@
-import * as THREE from "three";
-
 const contenedorForma = document.getElementById("figuraPrisma");
 const prisma2 = document.getElementById("prisma2");
 

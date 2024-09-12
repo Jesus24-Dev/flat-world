@@ -1,5 +1,3 @@
-import * as THREE from "three";
-
 function crearCono(contenedor) {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(
