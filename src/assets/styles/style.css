@@ -87,7 +87,11 @@
 @tailwind utilities;
 
 .cuadricula {
-  @apply grid grid-cols-12 grid-rows-12 h-screen p-4;
+  @apply grid grid-cols-12 grid-rows-12 h-screen w-full p-4;
+}
+
+.bordes {
+  @apply border-x-8 border-x-primary-950 border-y-8 border-y-secondary-400;
 }
 
 .titulo {

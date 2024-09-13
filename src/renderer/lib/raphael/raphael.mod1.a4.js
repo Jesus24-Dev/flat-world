@@ -3,6 +3,13 @@ const paralelogramaAtributos = {
   stroke: "#fd8e51",
   "stroke-width": 5,
 };
+
+const atributosTexto = {
+  "font-weight": 500,
+  "font-size": 32,
+  fill: "#fd8e51",
+  stroke: "black",
+};
 const paralelogramaEjemplo = document.querySelector("#paralelogramaEjemplo");
 const paperParalelogramaEjemplo = Raphael(paralelogramaEjemplo);
 
@@ -26,3 +33,13 @@ let paralelogramaCalculosPerimetro = paperParalelogramaCalculos.path(
 );
 
 paralelogramaCalculosPerimetro.attr(paralelogramaAtributos);
+
+let linea1 = paperParalelogramaCalculos.path("M128 32 L128 330");
+let linea2 = paperParalelogramaCalculos.path("M578 32 L578 330");
+
+let altura = paperParalelogramaCalculos
+  .text(180, 180, "Altura")
+  .attr(atributosTexto);
+
+let a = paperParalelogramaCalculos.text(870, 180, "B").attr(atributosTexto);
+let b = paperParalelogramaCalculos.text(650, 360, "A").attr(atributosTexto);
