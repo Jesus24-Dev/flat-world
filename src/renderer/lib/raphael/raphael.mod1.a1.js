@@ -12,16 +12,6 @@ const atributosTriangulo = {
 
 const paperIntroduccionTriangulo = Raphael(contenedorTriangulo);
 
-let linea1 = paperIntroduccionTriangulo.path("M116 32 L116 277");
-let linea2 = paperIntroduccionTriangulo.path("M232 32 L232 277");
-let linea3 = paperIntroduccionTriangulo.path("M348 32 L348 277");
-
-let lineas = [linea1, linea2, linea3];
-
-for (let linea of lineas) {
-  linea.attr({ "stroke-width": 5, stroke: "#74fc7d" });
-}
-
 let triangulo = paperIntroduccionTriangulo.path("M103 277 L360 277 L232 32 Z");
 triangulo.attr(atributosTriangulo);
 
