@@ -1,6 +1,30 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/renderer/index.html", "./src/renderer/app.js"],
+  content: [
+    "./src/renderer/index.html",
+    "./src/views/paginaPrincipal.html",
+    "./src/renderer/app.js",
+    "./src/views/lecciones/modulo1Lecciones.html",
+    "./src/views/lecciones/modulo2Lecciones.html",
+    "./src/views/lecciones/modulo3Lecciones.html",
+    "./src/views/lecciones/modulo4Lecciones.html",
+    "./src/views/modulo1/a1.html",
+    "./src/views/modulo1/a2.html",
+    "./src/views/modulo1/a3.html",
+    "./src/views/modulo1/a4.html",
+    "./src/views/modulo1/a5.html",
+    "./src/views/modulo2/b1.html",
+    "./src/views/modulo2/b2.html",
+    "./src/views/modulo2/b3.html",
+    "./src/views/modulo3/c1.html",
+    "./src/views/modulo3/c2.html",
+    "./src/views/modulo3/c3.html",
+    "./src/views/modulo3/c4.html",
+    "./src/views/modulo3/c5.html",
+    "./src/views/modulo3/c6.html",
+    "./src/views/modulo4/d1.html",
+    "./src/views/modulo4/d2.html",
+  ],
   theme: {
     extend: {
       colors: {
