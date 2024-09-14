@@ -1,3 +1,25 @@
+<div
+  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+  id="respuestaIncorrecta"
+>
+  <div
+    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+  >
+    <h1 class="text-6xl text-red-500">Incorrecto</h1>
+    <h2 class="text-4xl text-red-500">Vuelve a intentar</h2>
+  </div>
+</div>
+<div
+  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+  id="respuestaCorrecta"
+>
+  <div
+    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+  >
+    <h1 class="text-6xl text-green-500">Respuesta correcta!</h1>
+    <h2 class="text-4xl text-green-500">Bien hecho!</h2>
+  </div>
+</div>
 <section class="cuadricula" id="pregunta1">
   <h1 class="modulo-h1">Relacion entre figuras</h1>
   <h1 class="modulo-h1">Pregunta 1</h1>
@@ -9,7 +31,7 @@
     class="col-start-2 row-start-7 row-span-4 col-span-10 flex flex-col justify-center items-center"
   >
     <aside class="w-full flex justify-center content-center items-center">
-      <button class="botonPreguntas">
+      <button class="botonPreguntas correcto">
         Si, haciendo todos los ángulos rectos
       </button>
       <button class="botonPreguntas">
@@ -24,9 +46,6 @@
         Sí, si tiene dos lados opuestos paralelos.
       </button>
     </aside>
-  </article>
-  <article class="respuesta row-start-12 col-start-2 col-span-10 bg-red-200">
-    Respuesta correcta o incorrecta
   </article>
 </section>
 
@@ -47,7 +66,9 @@
       <button class="botonPreguntas">
         No, porque sus ángulos no son rectos.
       </button>
-      <button class="botonPreguntas">Sí, sus lados son paralelos.</button>
+      <button class="botonPreguntas correcto">
+        Sí, sus lados son paralelos.
+      </button>
     </aside>
     <aside class="w-full flex justify-center content-center items-center">
       <button class="botonPreguntas">
@@ -57,9 +78,6 @@
         Sí, si tienen ángulos iguales en todos sus vértices.
       </button>
     </aside>
-  </article>
-  <article class="respuesta row-start-12 col-start-2 col-span-10 bg-red-200">
-    Respuesta correcta o incorrecta
   </article>
 </section>
 
@@ -88,13 +106,10 @@
       <button class="botonPreguntas">
         Sí, si sus lados opuestos son iguales.
       </button>
-      <button class="botonPreguntas">
+      <button class="botonPreguntas correcto">
         No, porque tiene dos lados no paralelos.
       </button>
     </aside>
-  </article>
-  <article class="respuesta row-start-12 col-start-2 col-span-10 bg-red-200">
-    Respuesta correcta o incorrecta
   </article>
 </section>
 
@@ -121,12 +136,9 @@
       </button>
     </aside>
     <aside class="w-full flex justify-center content-center items-center">
-      <button class="botonPreguntas">El cuadrado.</button>
+      <button class="botonPreguntas correcto">El cuadrado.</button>
       <button class="botonPreguntas">Ambos tienen la misma área.</button>
     </aside>
-  </article>
-  <article class="respuesta row-start-12 col-start-2 col-span-10 bg-red-200">
-    Respuesta correcta o incorrecta
   </article>
 </section>
 
@@ -145,7 +157,7 @@
     class="col-start-2 row-start-7 row-span-4 col-span-10 flex flex-col justify-center items-center"
   >
     <aside class="w-full flex justify-center content-center items-center">
-      <button class="botonPreguntas">16 cm</button>
+      <button class="botonPreguntas correcto">16 cm</button>
       <button class="botonPreguntas">12 cm</button>
     </aside>
     <aside class="w-full flex justify-center content-center items-center">
@@ -153,8 +165,6 @@
       <button class="botonPreguntas">8 cm</button>
     </aside>
   </article>
-  <article class="respuesta row-start-12 col-start-2 col-span-10 bg-red-200">
-    Respuesta correcta o incorrecta
-  </article>
 </section>
 <script type="module" src="./lib/raphael/raphael.mod2.b3.js"></script>
+<script src="./lib/preguntas/mod2.b3.js"></script>
