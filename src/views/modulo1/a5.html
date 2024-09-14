@@ -1,4 +1,26 @@
-<section class="cuadricula" id="perimetroTriangulo1">
+<div
+  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+  id="respuestaIncorrecta"
+>
+  <div
+    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+  >
+    <h1 class="text-6xl text-red-500">Incorrecto</h1>
+    <h2 class="text-4xl text-red-500">Vuelve a intentar</h2>
+  </div>
+</div>
+<div
+  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+  id="respuestaCorrecta"
+>
+  <div
+    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+  >
+    <h1 class="text-6xl text-green-500">Respuesta correcta!</h1>
+    <h2 class="text-4xl text-green-500">Bien hecho!</h2>
+  </div>
+</div>
+<section class="cuadricula bordes" id="perimetroTriangulo1">
   <h1 class="modulo-h1">Problema <span>1</span></h1>
   <h1 class="modulo-h1">Triangulos</h1>
   <div
@@ -14,22 +36,19 @@
       <h2 class="modulo-h2">
         Un triángulo equilátero tiene lados de 5 cm. ¿Cuál es su perímetro?
       </h2>
-      <a
-        href="#"
-        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
-        >Ver respuesta</a
-      >
     </aside>
     <aside class="flex">
       <input
-        type="text"
+        type="number"
         class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
         placeholder="Respuesta"
+        id="respuestaPerimetroTriangulo1"
       />
       <button
-        class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+        class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600 p-2"
+        id="btnPerimetroTriangulo1"
       >
-        ->
+        <img src="../assets/images/flecha.png" alt="" />
       </button>
     </aside>
   </article>
@@ -52,29 +71,26 @@
         Un triángulo isósceles tiene una base de 8 cm y lados iguales de 6 cm.
         ¿Cuál es su perímetro?
       </h2>
-      <a
-        href="#"
-        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
-        >Ver respuesta</a
-      >
     </aside>
     <aside class="flex">
       <input
-        type="text"
+        type="number"
         class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
         placeholder="Respuesta"
+        id="respuestaPerimetroTriangulo2"
       />
       <button
         class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+        id="btnPerimetroTriangulo2"
       >
-        ->
+        <img src="../assets/images/flecha.png" alt="" />
       </button>
     </aside>
   </article>
 </section>
 <!-- ========== End Perimetro2 ========== -->
 <!-- ========== Start AreaTriangulo ========== -->
-<section class="cuadricula" id="areaTriangulo">
+<section class="cuadricula bordes" id="areaTriangulo">
   <h1 class="modulo-h1">Problema <span>3</span></h1>
   <h1 class="modulo-h1">Triangulos</h1>
   <div
@@ -91,22 +107,19 @@
         Un triángulo tiene una base de 10 cm y una altura de 6 cm. ¿Cuál es su
         área?
       </h2>
-      <a
-        href="#"
-        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
-        >Ver respuesta</a
-      >
     </aside>
     <aside class="flex">
       <input
-        type="text"
+        type="number"
         class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
         placeholder="Respuesta"
+        id="respuestaAreaTriangulo"
       />
       <button
         class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+        id="btnAreaTriangulo"
       >
-        ->
+        <img src="../assets/images/flecha.png" alt="" />
       </button>
     </aside>
   </article>
@@ -114,7 +127,7 @@
 <!-- ========== End AreaTriangulo ========== -->
 <!-- #Cuadrilateros-->
 <!-- ========== Start Cuadrado perimetro ========== -->
-<section class="cuadricula" id="cuadradoPerimetro">
+<section class="cuadricula bordes" id="cuadradoPerimetro">
   <h1 class="modulo-h1">Problema <span>1</span></h1>
   <h1 class="modulo-h1">Cuadrilateros</h1>
   <div
@@ -130,29 +143,26 @@
       <h2 class="modulo-h2">
         Un cuadrado tiene lados de 8 cm. ¿Cuál es su perímetro?
       </h2>
-      <a
-        href="#"
-        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
-        >Ver respuesta</a
-      >
     </aside>
     <aside class="flex">
       <input
-        type="text"
+        type="number"
         class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
         placeholder="Respuesta"
+        id="respuestaCuadradoPerimetro"
       />
       <button
         class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+        id="btnCuadradoPerimetro"
       >
-        ->
+        <img src="../assets/images/flecha.png" alt="" />
       </button>
     </aside>
   </article>
 </section>
 <!-- ========== End Cuadrado perimetro ========== -->
 <!-- ========== Start Rectangulo perimetro ========== -->
-<section class="cuadricula" id="rectanguloPerimetro">
+<section class="cuadricula bordes" id="rectanguloPerimetro">
   <h1 class="modulo-h1">Problema <span>2</span></h1>
   <h1 class="modulo-h1">Cuadrilateros</h1>
   <div
@@ -169,29 +179,26 @@
         Un rectángulo tiene una base de 10 cm y una altura de 5 cm. ¿Cuál es su
         perímetro?
       </h2>
-      <a
-        href="#"
-        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
-        >Ver respuesta</a
-      >
     </aside>
     <aside class="flex">
       <input
         type="text"
         class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
         placeholder="Respuesta"
+        id="respuestaRectanguloPerimetro"
       />
       <button
         class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+        id="btnRectanguloPerimetro"
       >
-        ->
+        <img src="../assets/images/flecha.png" alt="" />
       </button>
     </aside>
   </article>
 </section>
 <!-- ========== End Rectangulo perimetro ========== -->
 <!-- ========== Start Cuadrado area ========== -->
-<section class="cuadricula" id="cuadradoArea">
+<section class="cuadricula bordes" id="cuadradoArea">
   <h1 class="modulo-h1">Problema <span>3</span></h1>
   <h1 class="modulo-h1">Cuadrilateros</h1>
   <div
@@ -207,29 +214,26 @@
       <h2 class="modulo-h2">
         Un cuadrado tiene un lado de 6 cm. ¿Cuál es su área?
       </h2>
-      <a
-        href="#"
-        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
-        >Ver respuesta</a
-      >
     </aside>
     <aside class="flex">
       <input
-        type="text"
+        type="number"
         class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
         placeholder="Respuesta"
+        id="respuestaCuadradoArea"
       />
       <button
         class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+        id="btnCuadradoArea"
       >
-        ->
+        <img src="../assets/images/flecha.png" alt="" />
       </button>
     </aside>
   </article>
 </section>
 <!-- ========== End Cuadrado area ========== -->
 <!-- ========== Start Rectangulo area ========== -->
-<section class="cuadricula" id="rectanguloArea">
+<section class="cuadricula bordes" id="rectanguloArea">
   <h1 class="modulo-h1">Problema <span>4</span></h1>
   <h1 class="modulo-h1">Cuadrilateros</h1>
   <div
@@ -244,24 +248,21 @@
     >
       <h2 class="modulo-h2">
         Un rectángulo tiene una base de 12 cm y una altura de 7 cm. ¿Cuál es su
-        área? 
+        área?
       </h2>
-      <a
-        href="#"
-        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
-        >Ver respuesta</a
-      >
     </aside>
     <aside class="flex">
       <input
-        type="text"
+        type="number"
         class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
         placeholder="Respuesta"
+        id="respuestaRectanguloArea"
       />
       <button
         class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+        id="btnRectanguloArea"
       >
-        ->
+        <img src="../assets/images/flecha.png" alt="" />
       </button>
     </aside>
   </article>
@@ -269,3 +270,4 @@
 <!-- ========== End Rectangulo area ========== -->
 
 <script type="module" src="./lib/raphael/raphael.mod1.a5.js"></script>
+<script src="./lib/preguntas/mod1.js"></script>
