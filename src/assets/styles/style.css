@@ -173,3 +173,7 @@
 .botonPreguntas {
   @apply font-bold font-Open-Sans text-secondary-400 bg-primary-950 p-2 w-2/4 m-2 h-min rounded-lg hover:bg-opacity-75 active:bg-opacity-50;
 }
+
+.inputError {
+  @apply placeholder:text-red-500;
+}
