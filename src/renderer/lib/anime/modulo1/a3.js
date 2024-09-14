@@ -24,7 +24,7 @@ function moverContenedor(id) {
       avanzar(calculoRombo);
       break;
     case "2":
-      alert("Este es el final");
+      window.location.href = "../lecciones/modulo1Lecciones.html";
       break;
   }
 }

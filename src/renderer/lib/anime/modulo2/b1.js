@@ -48,7 +48,7 @@ function moverContenedor(id) {
       avanzar(calculoAreaPerimetro);
       break;
     case "6":
-      alert("Este es el final");
+      window.location.href = "../lecciones/modulo2Lecciones.html";
       break;
   }
 }

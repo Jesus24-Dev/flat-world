@@ -1,89 +1,112 @@
-<section class="cuadricula bordes absolute" id="defineCuadrilatero">
-  <h1 class="modulo-h1">CUADRILATERO</h1>
-  <article class="row-start-3 col-span-12">
-    <h2 class="modulo-h2">Son poligonos de cuatro lados. Se dividen en dos</h2>
-  </article>
-  <article
-    class="col-start-3 row-start-5 col-span-8 row-span-1 flex justify-around"
-  >
-    <aside>
-      <h2 class="modulo-h2">Cuadrado</h2>
-    </aside>
-    <aside>
-      <h2 class="modulo-h2">Rectangulo</h2>
-    </aside>
-  </article>
-  <div
-    class="col-start-3 row-start-6 col-span-8 row-span-5"
-    id="cuadrilateros"
-  ></div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="1"
-    >Click para continuar</a
-  >
-</section>
-<section class="cuadricula bordes absolute" id="defineCuadrado">
-  <h1 class="modulo-h1">CUADRADO</h1>
-  <div
-    class="row-start-2 col-start-2 row-span-8 col-span-5"
-    id="cuadrado"
-  ></div>
-  <article
-    class="row-start-2 col-start-7 row-span-8 col-span-5 flex flex-col items-center justify-around"
-  >
-    <h2 class="modulo-h2">
-      Tiene cuatro lados iguales y cuatro angulos rectos.
-    </h2>
-    <button
-      class="font-bold text-primary-950 bg-secondary-400 text-xl rounded-md w-max px-8 py-2 font-Open-Sans"
-    >
-      Area = Lado²
-    </button>
-    <button
-      class="font-bold text-primary-950 bg-secondary-400 text-xl rounded-md w-max px-8 py-2 font-Open-Sans"
-    >
-      Perimetro: 4 x Lado
-    </button>
-  </article>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="2"
-    >Click para continuar</a
-  >
-</section>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flat-World</title>
+    <link rel="stylesheet" href="../../assets/styles/main.css" />
+    <script
+      type="module"
+      src="../../../node_modules/raphael/raphael.min.js"
+    ></script>
+    <script src="../../../node_modules/animejs/lib/anime.min.js"></script>
+    <script src="../../services/three.js"></script>
+  </head>
+  <body class="overflow-hidden">
+    <section class="cuadricula bordes absolute" id="defineCuadrilatero">
+      <h1 class="modulo-h1">CUADRILATERO</h1>
+      <article class="row-start-3 col-span-12">
+        <h2 class="modulo-h2">
+          Son poligonos de cuatro lados. Se dividen en dos
+        </h2>
+      </article>
+      <article
+        class="col-start-3 row-start-5 col-span-8 row-span-1 flex justify-around"
+      >
+        <aside>
+          <h2 class="modulo-h2">Cuadrado</h2>
+        </aside>
+        <aside>
+          <h2 class="modulo-h2">Rectangulo</h2>
+        </aside>
+      </article>
+      <div
+        class="col-start-3 row-start-6 col-span-8 row-span-5"
+        id="cuadrilateros"
+      ></div>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="1"
+        >Click para continuar</a
+      >
+    </section>
+    <section class="cuadricula bordes absolute" id="defineCuadrado">
+      <h1 class="modulo-h1">CUADRADO</h1>
+      <div
+        class="row-start-2 col-start-2 row-span-8 col-span-5"
+        id="cuadrado"
+      ></div>
+      <article
+        class="row-start-2 col-start-7 row-span-8 col-span-5 flex flex-col items-center justify-around"
+      >
+        <h2 class="modulo-h2">
+          Tiene cuatro lados iguales y cuatro angulos rectos.
+        </h2>
+        <button
+          class="font-bold text-primary-950 bg-secondary-400 text-xl rounded-md w-max px-8 py-2 font-Open-Sans"
+        >
+          Area = Lado²
+        </button>
+        <button
+          class="font-bold text-primary-950 bg-secondary-400 text-xl rounded-md w-max px-8 py-2 font-Open-Sans"
+        >
+          Perimetro: 4 x Lado
+        </button>
+      </article>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="2"
+        >Click para continuar</a
+      >
+    </section>
 
-<section class="cuadricula bordes absolute" id="defineRectangulo">
-  <h1 class="modulo-h1">Rectangulo</h1>
-  <div
-    class="row-start-2 col-start-7 row-span-8 col-span-5"
-    id="rectangulo"
-  ></div>
-  <article
-    class="row-start-2 col-start-2 row-span-8 col-span-5 flex flex-col items-center justify-around"
-  >
-    <h2 class="modulo-h2">
-      Tiene dos pares de lados iguales y cuatro angulos rectos.
-    </h2>
-    <button
-      class="font-bold text-primary-950 bg-secondary-400 text-xl rounded-md w-max px-8 py-2 font-Open-Sans"
-    >
-      Area = base x altura
-    </button>
-    <button
-      class="font-bold text-primary-950 bg-secondary-400 text-xl rounded-md w-max px-8 py-2 font-Open-Sans"
-    >
-      Perimetro = 2 x (base + altura)
-    </button>
-  </article>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="3"
-    >Click para continuar</a
-  >
-</section>
-<script type="module" src="./lib/raphael/raphael.mod1.a2.js"></script>
-<script src="./lib/anime/modulo1/a2.js"></script>
+    <section class="cuadricula bordes absolute" id="defineRectangulo">
+      <h1 class="modulo-h1">Rectangulo</h1>
+      <div
+        class="row-start-2 col-start-7 row-span-8 col-span-5"
+        id="rectangulo"
+      ></div>
+      <article
+        class="row-start-2 col-start-2 row-span-8 col-span-5 flex flex-col items-center justify-around"
+      >
+        <h2 class="modulo-h2">
+          Tiene dos pares de lados iguales y cuatro angulos rectos.
+        </h2>
+        <button
+          class="font-bold text-primary-950 bg-secondary-400 text-xl rounded-md w-max px-8 py-2 font-Open-Sans"
+        >
+          Area = base x altura
+        </button>
+        <button
+          class="font-bold text-primary-950 bg-secondary-400 text-xl rounded-md w-max px-8 py-2 font-Open-Sans"
+        >
+          Perimetro = 2 x (base + altura)
+        </button>
+      </article>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="3"
+        >Click para continuar</a
+      >
+    </section>
+    <script
+      type="module"
+      src="../../renderer/lib/raphael/raphael.mod1.a2.js"
+    ></script>
+    <script src="../../renderer/lib/anime/modulo1/a2.js"></script>
+    <script src="../../renderer/app.js"></script>
+  </body>
+</html>

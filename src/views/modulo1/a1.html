@@ -1,127 +1,152 @@
-<section class="cuadricula bordes absolute" id="introduccion">
-  <article class="col-start-2 row-start-2 col-span-10 row-span-2">
-    <h2 class="modulo-h2">
-      Un polígono es una figura geométrica plana que se forma al unir varios
-      segmentos de recta consecutivos y cerrados.
-    </h2>
-  </article>
-  <article class="col-start-2 row-start-4 col-span-3 row-span-5">
-    <h2 class="modulo-h2">
-      Imagina que tomas varios palitos y los unes formando una figura sin que se
-      despeguen del suelo
-    </h2>
-  </article>
-  <div
-    class="col-start-5 row-start-4 col-span-4 row-span-5"
-    id="contenedorTriangulo"
-  ></div>
-  <article class="col-start-9 row-start-5 col-span-3 row-span-2">
-    <h2 class="modulo-h2">¡Eso sería un polígono!</h2>
-  </article>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="1"
-    >Click para continuar</a
-  >
-</section>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flat-World</title>
+    <link rel="stylesheet" href="../../assets/styles/main.css" />
+    <script
+      type="module"
+      src="../../../node_modules/raphael/raphael.min.js"
+    ></script>
+    <script src="../../../node_modules/animejs/lib/anime.min.js"></script>
+    <script src="../../services/three.js"></script>
+  </head>
+  <body class="overflow-hidden">
+    <section class="cuadricula bordes absolute" id="introduccion">
+      <article class="col-start-2 row-start-2 col-span-10 row-span-2">
+        <h2 class="modulo-h2">
+          Un polígono es una figura geométrica plana que se forma al unir varios
+          segmentos de recta consecutivos y cerrados.
+        </h2>
+      </article>
+      <article class="col-start-2 row-start-4 col-span-3 row-span-5">
+        <h2 class="modulo-h2">
+          Imagina que tomas varios palitos y los unes formando una figura sin
+          que se despeguen del suelo
+        </h2>
+      </article>
+      <div
+        class="col-start-5 row-start-4 col-span-4 row-span-5"
+        id="contenedorTriangulo"
+      ></div>
+      <article class="col-start-9 row-start-5 col-span-3 row-span-2">
+        <h2 class="modulo-h2">¡Eso sería un polígono!</h2>
+      </article>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="1"
+        >Click para continuar</a
+      >
+    </section>
 
-<section class="cuadricula bordes absolute" id="defineTriangulo">
-  <h1 class="modulo-h1">Triangulo</h1>
-  <article
-    class="col-start-2 row-start-3 col-span-5 row-span-7"
-    id="trianguloBase"
-  ></article>
-  <article
-    class="col-start-7 row-start-3 col-span-5 row-span-7 flex flex-col justify-around"
-  >
-    <h2 class="modulo-h2">Empezamos por una figura basica, el triangulo.</h2>
-    <h2 class="modulo-h2">Un triángulo es un polígono de tres lados</h2>
-    <h2 class="modulo-h2">Los triangulos se clasifican por dos criterios</h2>
-  </article>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="2"
-    >Click para continuar</a
-  >
-</section>
+    <section class="cuadricula bordes absolute" id="defineTriangulo">
+      <h1 class="modulo-h1">Triangulo</h1>
+      <article
+        class="col-start-2 row-start-3 col-span-5 row-span-7"
+        id="trianguloBase"
+      ></article>
+      <article
+        class="col-start-7 row-start-3 col-span-5 row-span-7 flex flex-col justify-around"
+      >
+        <h2 class="modulo-h2">
+          Empezamos por una figura basica, el triangulo.
+        </h2>
+        <h2 class="modulo-h2">Un triángulo es un polígono de tres lados</h2>
+        <h2 class="modulo-h2">
+          Los triangulos se clasifican por dos criterios
+        </h2>
+      </article>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="2"
+        >Click para continuar</a
+      >
+    </section>
 
-<section class="cuadricula bordes absolute" id="defineTrianguloPorLados">
-  <h1 class="modulo-h1">Segun sus lados</h1>
-  <article
-    class="col-start-3 row-start-4 col-span-8 row-span-1 flex justify-between"
-  >
-    <aside class="w-full">
-      <h2 class="modulo-h2">Equilatero</h2>
-    </aside>
-    <aside class="w-full">
-      <h2 class="modulo-h2">Isosceles</h2>
-    </aside>
-    <aside class="w-full">
-      <h2 class="modulo-h2">Escaleno</h2>
-    </aside>
-  </article>
-  <div
-    class="col-start-3 row-start-5 col-span-8 row-span-4"
-    id="triangulosPorLado"
-  ></div>
-  <article class="col-start-3 row-start-10 col-span-8 row-span-1"></article>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="3"
-    >Click para continuar</a
-  >
-</section>
+    <section class="cuadricula bordes absolute" id="defineTrianguloPorLados">
+      <h1 class="modulo-h1">Segun sus lados</h1>
+      <article
+        class="col-start-3 row-start-4 col-span-8 row-span-1 flex justify-between"
+      >
+        <aside class="w-full">
+          <h2 class="modulo-h2">Equilatero</h2>
+        </aside>
+        <aside class="w-full">
+          <h2 class="modulo-h2">Isosceles</h2>
+        </aside>
+        <aside class="w-full">
+          <h2 class="modulo-h2">Escaleno</h2>
+        </aside>
+      </article>
+      <div
+        class="col-start-3 row-start-5 col-span-8 row-span-4"
+        id="triangulosPorLado"
+      ></div>
+      <article class="col-start-3 row-start-10 col-span-8 row-span-1"></article>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="3"
+        >Click para continuar</a
+      >
+    </section>
 
-<section class="cuadricula bordes absolute" id="defineTrianguloPorAngulos">
-  <h1 class="modulo-h1">Segun sus angulos</h1>
-  <article
-    class="col-start-3 row-start-4 col-span-8 row-span-4 flex justify-between"
-  >
-    <aside class="w-full">
-      <h2 class="modulo-h2">Acutangulo</h2>
-    </aside>
-    <aside class="w-full">
-      <h2 class="modulo-h2">Rectangulo</h2>
-    </aside>
-    <aside class="w-full">
-      <h2 class="modulo-h2">Obtusangulo</h2>
-    </aside>
-  </article>
-  <div
-    class="col-start-3 row-start-5 col-span-8 row-span-4"
-    id="triangulosPorAngulo"
-  ></div>
-  <article class="col-start-3 row-start-10 col-span-8 row-span-1"></article>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="4"
-    >Click para continuar</a
-  >
-</section>
+    <section class="cuadricula bordes absolute" id="defineTrianguloPorAngulos">
+      <h1 class="modulo-h1">Segun sus angulos</h1>
+      <article
+        class="col-start-3 row-start-4 col-span-8 row-span-4 flex justify-between"
+      >
+        <aside class="w-full">
+          <h2 class="modulo-h2">Acutangulo</h2>
+        </aside>
+        <aside class="w-full">
+          <h2 class="modulo-h2">Rectangulo</h2>
+        </aside>
+        <aside class="w-full">
+          <h2 class="modulo-h2">Obtusangulo</h2>
+        </aside>
+      </article>
+      <div
+        class="col-start-3 row-start-5 col-span-8 row-span-4"
+        id="triangulosPorAngulo"
+      ></div>
+      <article class="col-start-3 row-start-10 col-span-8 row-span-1"></article>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="4"
+        >Click para continuar</a
+      >
+    </section>
 
-<section class="cuadricula bordes absolute" id="areaPerimetro">
-  <h1 class="modulo-h1">Calculo de Area y perimetro</h1>
-  <div
-    class="col-start-2 row-start-4 col-span-5 row-span-6"
-    id="calculoTriangulo"
-  ></div>
-  <article
-    class="col-start-7 row-start-4 col-span-4 row-span-5 flex flex-col justify-around"
-  >
-    <h2 class="modulo-h2">Perimetro = a + b + c</h2>
-    <h2 class="modulo-h2">Area = ( b * h ) / 2</h2>
-  </article>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="5"
-    >Click para continuar</a
-  >
-</section>
+    <section class="cuadricula bordes absolute" id="areaPerimetro">
+      <h1 class="modulo-h1">Calculo de Area y perimetro</h1>
+      <div
+        class="col-start-2 row-start-4 col-span-5 row-span-6"
+        id="calculoTriangulo"
+      ></div>
+      <article
+        class="col-start-7 row-start-4 col-span-4 row-span-5 flex flex-col justify-around"
+      >
+        <h2 class="modulo-h2">Perimetro = a + b + c</h2>
+        <h2 class="modulo-h2">Area = ( b * h ) / 2</h2>
+      </article>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="5"
+        >Click para continuar</a
+      >
+    </section>
 
-<script src="./lib/anime/modulo1/a1.js"></script>
-<script type="module" src="./lib/raphael/raphael.mod1.a1.js"></script>
+    <script src="../../renderer/lib/anime/modulo1/a1.js"></script>
+    <script
+      type="module"
+      src="../../renderer/lib/raphael/raphael.mod1.a1.js"
+    ></script>
+    <script src="../../renderer/app.js"></script>
+  </body>
+</html>

@@ -72,6 +72,9 @@ btnCubo.addEventListener("click", () => {
 
   if (respuesta == resultado) {
     mostrarRespuestaCorrecta();
+    setTimeout(function () {
+      window.location.replace("../lecciones/modulo3Lecciones.html");
+    }, 2000);
   } else {
     mostrarRespuestaIncorrecta();
   }

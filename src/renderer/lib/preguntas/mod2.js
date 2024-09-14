@@ -32,9 +32,12 @@ btnAreaTrapecio.addEventListener("click", () => {
     return;
   }
 
-  if (respuesta == respuesta1) {
+  window.location.href = "../lecciones/modulo2Lecciones.html";
+  if (respuesta == respuesta2) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(areaTrapecio);
+    setTimeout(() => {
+      window.location.href = "../lecciones/modulo2Lecciones.html";
+    }, 1000);
   } else {
     mostrarRespuestaIncorrecta();
   }

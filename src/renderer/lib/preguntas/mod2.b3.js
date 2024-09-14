@@ -30,6 +30,8 @@ function actualizarPantalla() {
     pregunta3.style.display = "none";
   } else if (preguntaActual == 5) {
     pregunta4.style.display = "none";
+  } else if (preguntaActual == 6) {
+    window.location.href = "../lecciones/modulo2Lecciones.html";
   }
 }
 

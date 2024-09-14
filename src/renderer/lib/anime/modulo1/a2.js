@@ -30,7 +30,7 @@ function moverContenedor(id) {
       avanzar(defineRectangulo);
       break;
     case "3":
-      alert("Este es el final");
+      window.location.href = "../lecciones/modulo1Lecciones.html";
       break;
   }
 }

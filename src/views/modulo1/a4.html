@@ -1,46 +1,67 @@
-<section class="cuadricula bordes absolute" id="defineParalelograma">
-  <h1 class="modulo-h1">Paralelograma</h1>
-  <article
-    class="col-start-2 row-start-4 col-span-3 row-span-3 text-center flex items-center"
-  >
-    <h2 class="modulo-h2 text-center">
-      Tiene cuatro lados iguales, dos angulos agudos y dos obtusos.
-    </h2>
-  </article>
-  <div
-    class="row-start-3 col-start-5 row-span-8 col-span-5"
-    id="paralelogramaEjemplo"
-  ></div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="1"
-    >Click para continuar</a
-  >
-</section>
-<section class="cuadricula bordes absolute" id="calculoParalelograma">
-  <h1 class="modulo-h1 row-start-1">Paralelograma</h1>
-  <h1 class="modulo-h1 row-start-2 text-center">Calculos</h1>
-  <article
-    class="col-start-3 row-start-3 col-span-8 row-span-1 flex justify-around"
-  >
-    <aside class="flex flex-col justify-evenly items-center">
-      <h2 class="modulo-h2">Area</h2>
-    </aside>
-    <aside class="flex flex-col justify-evenly">
-      <h2 class="modulo-h2">Perimetro</h2>
-    </aside>
-  </article>
-  <div
-    class="col-start-3 row-start-4 col-span-8 row-span-7"
-    id="paralelogramaCalculos"
-  ></div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="2"
-    >Click para continuar</a
-  >
-</section>
-<script src="./lib/anime/modulo1/a4.js"></script>
-<script src="./lib/raphael/raphael.mod1.a4.js" type="module"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flat-World</title>
+    <link rel="stylesheet" href="../../assets/styles/main.css" />
+    <script
+      type="module"
+      src="../../../node_modules/raphael/raphael.min.js"
+    ></script>
+    <script src="../../../node_modules/animejs/lib/anime.min.js"></script>
+    <script src="../../services/three.js"></script>
+  </head>
+  <body class="overflow-hidden">
+    <section class="cuadricula bordes absolute" id="defineParalelograma">
+      <h1 class="modulo-h1">Paralelograma</h1>
+      <article
+        class="col-start-2 row-start-4 col-span-3 row-span-3 text-center flex items-center"
+      >
+        <h2 class="modulo-h2 text-center">
+          Tiene cuatro lados iguales, dos angulos agudos y dos obtusos.
+        </h2>
+      </article>
+      <div
+        class="row-start-3 col-start-5 row-span-8 col-span-5"
+        id="paralelogramaEjemplo"
+      ></div>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="1"
+        >Click para continuar</a
+      >
+    </section>
+    <section class="cuadricula bordes absolute" id="calculoParalelograma">
+      <h1 class="modulo-h1 row-start-1">Paralelograma</h1>
+      <h1 class="modulo-h1 row-start-2 text-center">Calculos</h1>
+      <article
+        class="col-start-3 row-start-3 col-span-8 row-span-1 flex justify-around"
+      >
+        <aside class="flex flex-col justify-evenly items-center">
+          <h2 class="modulo-h2">Area</h2>
+        </aside>
+        <aside class="flex flex-col justify-evenly">
+          <h2 class="modulo-h2">Perimetro</h2>
+        </aside>
+      </article>
+      <div
+        class="col-start-3 row-start-4 col-span-8 row-span-7"
+        id="paralelogramaCalculos"
+      ></div>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="2"
+        >Click para continuar</a
+      >
+    </section>
+    <script src="../../renderer/lib/anime/modulo1/a4.js"></script>
+    <script
+      src="../../renderer/lib/raphael/raphael.mod1.a4.js"
+      type="module"
+    ></script>
+    <script src="../../renderer/app.js"></script>
+  </body>
+</html>

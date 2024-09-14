@@ -1,95 +1,117 @@
-<div
-  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
-  id="respuestaIncorrecta"
->
-  <div
-    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
-  >
-    <h1 class="text-6xl text-red-500">Incorrecto</h1>
-    <h2 class="text-4xl text-red-500">Vuelve a intentar</h2>
-  </div>
-</div>
-<div
-  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
-  id="respuestaCorrecta"
->
-  <div
-    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
-  >
-    <h1 class="text-6xl text-green-500">Respuesta correcta!</h1>
-    <h2 class="text-4xl text-green-500">Bien hecho!</h2>
-  </div>
-</div>
-<section class="cuadricula bordes" id="perimetroTrapecio">
-  <h1 class="modulo-h1">Problema <span>1</span></h1>
-  <h1 class="modulo-h1">Trapecios</h1>
-  <div
-    class="row-start-4 col-start-2 row-span-6 col-span-4"
-    id="perimetroTrapecioContainer"
-  ></div>
-  <article
-    class="row-start-4 col-start-7 row-span-7 col-span-5 bg-primary-950 flex flex-col p-4 gap-4"
-  >
-    <aside
-      class="bg-white h-5/6 rounded-lg flex flex-col items-center justify-around"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flat-World</title>
+    <link rel="stylesheet" href="../../assets/styles/main.css" />
+    <script
+      type="module"
+      src="../../../node_modules/raphael/raphael.min.js"
+    ></script>
+    <script src="../../../node_modules/animejs/lib/anime.min.js"></script>
+    <script src="../../services/three.js"></script>
+  </head>
+  <body class="overflow-hidden">
+    <div
+      class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+      id="respuestaIncorrecta"
     >
-      <h2 class="modulo-h2">
-        Un trapecio isósceles tiene bases de 8 cm y 12 cm, y lados iguales de 5
-        cm. ¿Cuál es su perímetro?
-      </h2>
-    </aside>
-    <aside class="flex">
-      <input
-        type="number"
-        class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
-        placeholder="Respuesta"
-        id="respuestaPerimetroTrapecio"
-      />
-      <button
-        class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
-        id="btnPerimetroTrapecio"
+      <div
+        class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
       >
-        <img src="../assets/images/flecha.png" alt="" />
-      </button>
-    </aside>
-  </article>
-</section>
-<!-- ========== Start Area Trapecio ========== -->
+        <h1 class="text-6xl text-red-500">Incorrecto</h1>
+        <h2 class="text-4xl text-red-500">Vuelve a intentar</h2>
+      </div>
+    </div>
+    <div
+      class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+      id="respuestaCorrecta"
+    >
+      <div
+        class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+      >
+        <h1 class="text-6xl text-green-500">Respuesta correcta!</h1>
+        <h2 class="text-4xl text-green-500">Bien hecho!</h2>
+      </div>
+    </div>
+    <section class="cuadricula bordes" id="perimetroTrapecio">
+      <h1 class="modulo-h1">Problema <span>1</span></h1>
+      <h1 class="modulo-h1">Trapecios</h1>
+      <div
+        class="row-start-4 col-start-2 row-span-6 col-span-4"
+        id="perimetroTrapecioContainer"
+      ></div>
+      <article
+        class="row-start-4 col-start-7 row-span-7 col-span-5 bg-primary-950 flex flex-col p-4 gap-4"
+      >
+        <aside
+          class="bg-white h-5/6 rounded-lg flex flex-col items-center justify-around"
+        >
+          <h2 class="modulo-h2">
+            Un trapecio isósceles tiene bases de 8 cm y 12 cm, y lados iguales
+            de 5 cm. ¿Cuál es su perímetro?
+          </h2>
+        </aside>
+        <aside class="flex">
+          <input
+            type="number"
+            class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
+            placeholder="Respuesta"
+            id="respuestaPerimetroTrapecio"
+          />
+          <button
+            class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+            id="btnPerimetroTrapecio"
+          >
+            <img src="../../assets/images/flecha.png" alt="" />
+          </button>
+        </aside>
+      </article>
+    </section>
+    <!-- ========== Start Area Trapecio ========== -->
 
-<!-- ========== End Area Trapecio ========== -->
-<section class="cuadricula bordes" id="areaTrapecio">
-  <h1 class="modulo-h1">Problema <span>2</span></h1>
-  <h1 class="modulo-h1">Trapecios</h1>
-  <div
-    class="row-start-4 col-start-2 row-span-6 col-span-4"
-    id="areaTrapecioContainer"
-  ></div>
-  <article
-    class="row-start-4 col-start-7 row-span-7 col-span-5 bg-primary-950 flex flex-col p-4 gap-4"
-  >
-    <aside
-      class="bg-white h-5/6 rounded-lg flex flex-col items-center justify-around"
-    >
-      <h2 class="modulo-h2">
-        Un trapecio tiene bases de 10 cm y 6 cm, y una altura de 4 cm. ¿Cuál es
-        su área?
-      </h2>
-    </aside>
-    <aside class="flex">
-      <input
-        type="text"
-        class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
-        placeholder="Respuesta"
-        id="respuestaAreaTrapecio"
-      />
-      <button
-        class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
-        id="btnAreaTrapecio"
+    <!-- ========== End Area Trapecio ========== -->
+    <section class="cuadricula bordes" id="areaTrapecio">
+      <h1 class="modulo-h1">Problema <span>2</span></h1>
+      <h1 class="modulo-h1">Trapecios</h1>
+      <div
+        class="row-start-4 col-start-2 row-span-6 col-span-4"
+        id="areaTrapecioContainer"
+      ></div>
+      <article
+        class="row-start-4 col-start-7 row-span-7 col-span-5 bg-primary-950 flex flex-col p-4 gap-4"
       >
-        <img src="../assets/images/flecha.png" alt="" />
-      </button>
-    </aside>
-  </article>
-</section>
-<script type="module" src="./lib/raphael/raphael.mod2.b2.js"></script>
-<script src="./lib/preguntas/mod2.js"></script>
+        <aside
+          class="bg-white h-5/6 rounded-lg flex flex-col items-center justify-around"
+        >
+          <h2 class="modulo-h2">
+            Un trapecio tiene bases de 10 cm y 6 cm, y una altura de 4 cm. ¿Cuál
+            es su área?
+          </h2>
+        </aside>
+        <aside class="flex">
+          <input
+            type="text"
+            class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
+            placeholder="Respuesta"
+            id="respuestaAreaTrapecio"
+          />
+          <button
+            class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+            id="btnAreaTrapecio"
+          >
+            <img src="../../assets/images/flecha.png" alt="" />
+          </button>
+        </aside>
+      </article>
+    </section>
+    <script
+      type="module"
+      src="../../renderer/lib/raphael/raphael.mod2.b2.js"
+    ></script>
+    <script src="../../renderer/lib/preguntas/mod2.js"></script>
+
+    <script src="../../renderer/app.js"></script>
+  </body>
+</html>

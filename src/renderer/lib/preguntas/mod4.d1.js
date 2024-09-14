@@ -72,7 +72,7 @@ btnEjercicio4.addEventListener("click", () => {
 
   if (respuesta == resultado4) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(Ejercicio4);
+    window.location.href = "../lecciones/modulo4Lecciones.html";
   } else {
     mostrarRespuestaIncorrecta();
   }

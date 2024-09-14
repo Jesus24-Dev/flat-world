@@ -137,7 +137,7 @@ const respuestaRectanguloArea = document.querySelector(
 );
 const btnRectanguloArea = document.querySelector("#btnRectanguloArea");
 
-const respuesta7 = 36;
+const respuesta7 = 84;
 
 btnRectanguloArea.addEventListener("click", () => {
   let respuesta = respuestaRectanguloArea.value;
@@ -147,7 +147,7 @@ btnRectanguloArea.addEventListener("click", () => {
 
   if (respuesta == respuesta7) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(rectanguloArea);
+    window.location.href = "../lecciones/modulo1Lecciones.html";
   } else {
     mostrarRespuestaIncorrecta();
   }

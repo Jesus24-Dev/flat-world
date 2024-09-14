@@ -1,127 +1,149 @@
-<section class="cuadricula bordes absolute" id="defineTrapecio">
-  <h1 class="modulo-h1">Trapecios</h1>
-  <h2
-    class="modulo-h2 col-start-3 row-start-2 col-span-8 row-span-2 text-center"
-  >
-    Tiene dos lados paralelos, y dos lados no paralelos. Los lados paralelos se
-    llaman bases del trapecio
-  </h2>
-  <div
-    class="col-start-4 row-start-4 col-span-6 row-span-6"
-    id="trapecioEjemplo"
-  ></div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="1"
-    >Click para continuar</a
-  >
-</section>
-<section class="cuadricula bordes absolute" id="trapecioRectangulo">
-  <h1 class="modulo-h1">Trapecio Rectangulo</h1>
-  <h2
-    class="modulo-h2 col-start-3 row-start-2 col-span-8 row-span-2 text-center"
-  >
-    Tiene un angulo recto, esto significa que uno de los lados no paralelos es
-    perpendicular a la base.
-  </h2>
-  <div
-    class="col-start-4 row-start-4 col-span-6 row-span-6"
-    id="trapecioRectanguloForma"
-  ></div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="2"
-    >Click para continuar</a
-  >
-</section>
-<section class="cuadricula bordes absolute" id="trapecioIsosceles">
-  <h1 class="modulo-h1">Trapecio Isosceles</h1>
-  <h2
-    class="modulo-h2 col-start-3 row-start-2 col-span-8 row-span-2 text-center"
-  >
-    Los dos lados no paralelos tienen la misma longitud. Además, los ángulos que
-    se forman entre cada base y un lado no paralelo son iguales.
-  </h2>
-  <div
-    class="col-start-4 row-start-4 col-span-6 row-span-6"
-    id="trapecioIsoscelesForma"
-  ></div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="3"
-    >Click para continuar</a
-  >
-</section>
-<section class="cuadricula bordes absolute" id="trapecioEscaleno">
-  <h1 class="modulo-h1">Trapecio escaleno</h1>
-  <h2
-    class="modulo-h2 col-start-3 row-start-2 col-span-8 row-span-2 text-center"
-  >
-    Ninguno de sus lados ni ángulos es igual. Es decir, todos sus lados tienen
-    longitudes diferentes y todos sus ángulos tienen medidas diferentes.
-  </h2>
-  <div
-    class="col-start-4 row-start-4 col-span-6 row-span-6"
-    id="trapecioEscalenoForma"
-  ></div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="4"
-    >Click para continuar</a
-  >
-</section>
-<section class="cuadricula bordes absolute" id="calculoAreaTrapecio">
-  <h1 class="modulo-h1">Calculo de area de un trapecio</h1>
-  <div
-    class="col-start-2 row-start-3 col-span-3 row-span-5"
-    id="trapecioArea"
-  ></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flat-World</title>
+    <link rel="stylesheet" href="../../assets/styles/main.css" />
+    <script
+      type="module"
+      src="../../../node_modules/raphael/raphael.min.js"
+    ></script>
+    <script src="../../../node_modules/animejs/lib/anime.min.js"></script>
+    <script src="../../services/three.js"></script>
+  </head>
+  <body class="overflow-hidden">
+    <section class="cuadricula bordes absolute" id="defineTrapecio">
+      <h1 class="modulo-h1">Trapecios</h1>
+      <h2
+        class="modulo-h2 col-start-3 row-start-2 col-span-8 row-span-2 text-center"
+      >
+        Tiene dos lados paralelos, y dos lados no paralelos. Los lados paralelos
+        se llaman bases del trapecio
+      </h2>
+      <div
+        class="col-start-4 row-start-4 col-span-6 row-span-6"
+        id="trapecioEjemplo"
+      ></div>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="1"
+        >Click para continuar</a
+      >
+    </section>
+    <section class="cuadricula bordes absolute" id="trapecioRectangulo">
+      <h1 class="modulo-h1">Trapecio Rectangulo</h1>
+      <h2
+        class="modulo-h2 col-start-3 row-start-2 col-span-8 row-span-2 text-center"
+      >
+        Tiene un angulo recto, esto significa que uno de los lados no paralelos
+        es perpendicular a la base.
+      </h2>
+      <div
+        class="col-start-4 row-start-4 col-span-6 row-span-6"
+        id="trapecioRectanguloForma"
+      ></div>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="2"
+        >Click para continuar</a
+      >
+    </section>
+    <section class="cuadricula bordes absolute" id="trapecioIsosceles">
+      <h1 class="modulo-h1">Trapecio Isosceles</h1>
+      <h2
+        class="modulo-h2 col-start-3 row-start-2 col-span-8 row-span-2 text-center"
+      >
+        Los dos lados no paralelos tienen la misma longitud. Además, los ángulos
+        que se forman entre cada base y un lado no paralelo son iguales.
+      </h2>
+      <div
+        class="col-start-4 row-start-4 col-span-6 row-span-6"
+        id="trapecioIsoscelesForma"
+      ></div>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="3"
+        >Click para continuar</a
+      >
+    </section>
+    <section class="cuadricula bordes absolute" id="trapecioEscaleno">
+      <h1 class="modulo-h1">Trapecio escaleno</h1>
+      <h2
+        class="modulo-h2 col-start-3 row-start-2 col-span-8 row-span-2 text-center"
+      >
+        Ninguno de sus lados ni ángulos es igual. Es decir, todos sus lados
+        tienen longitudes diferentes y todos sus ángulos tienen medidas
+        diferentes.
+      </h2>
+      <div
+        class="col-start-4 row-start-4 col-span-6 row-span-6"
+        id="trapecioEscalenoForma"
+      ></div>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="4"
+        >Click para continuar</a
+      >
+    </section>
+    <section class="cuadricula bordes absolute" id="calculoAreaTrapecio">
+      <h1 class="modulo-h1">Calculo de area de un trapecio</h1>
+      <div
+        class="col-start-2 row-start-3 col-span-3 row-span-5"
+        id="trapecioArea"
+      ></div>
 
-  <h2 class="modulo-h2 col-start-1 row-start-8 col-span-5 row-span-1">
-    A = ((B + b ) * h ) / 2
-  </h2>
+      <h2 class="modulo-h2 col-start-1 row-start-8 col-span-5 row-span-1">
+        A = ((B + b ) * h ) / 2
+      </h2>
 
-  <div class="col-start-6 row-start-4 col-span-5 row-span-4">
-    <h2 class="modulo-h2">
-      Para hallar el área de un trapecio, debes conocer las longitudes de los
-      dos lados paralelos (las "bases") y la altura. Suma las longitudes de las
-      dos bases y luego multiplica por la altura. Por último, divide entre 2
-      para obtener el área del trapecio
-    </h2>
-  </div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="5"
-    >Click para continuar</a
-  >
-</section>
-<section class="cuadricula bordes absolute" id="calculoAreaPerimetro">
-  <h1 class="modulo-h1">Calculo de perimetro de un trapecio</h1>
-  <div
-    class="col-start-2 row-start-3 col-span-3 row-span-5"
-    id="trapecioPerimetro"
-  ></div>
+      <div class="col-start-6 row-start-4 col-span-5 row-span-4">
+        <h2 class="modulo-h2">
+          Para hallar el área de un trapecio, debes conocer las longitudes de
+          los dos lados paralelos (las "bases") y la altura. Suma las longitudes
+          de las dos bases y luego multiplica por la altura. Por último, divide
+          entre 2 para obtener el área del trapecio
+        </h2>
+      </div>
+      <a
+        href="#"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="5"
+        >Click para continuar</a
+      >
+    </section>
+    <section class="cuadricula bordes absolute" id="calculoAreaPerimetro">
+      <h1 class="modulo-h1">Calculo de perimetro de un trapecio</h1>
+      <div
+        class="col-start-2 row-start-3 col-span-3 row-span-5"
+        id="trapecioPerimetro"
+      ></div>
 
-  <h2 class="modulo-h2 col-start-1 row-start-8 col-span-5 row-span-1">
-    P = a + b + c + d
-  </h2>
+      <h2 class="modulo-h2 col-start-1 row-start-8 col-span-5 row-span-1">
+        P = a + b + c + d
+      </h2>
 
-  <div class="col-start-6 row-start-5 col-span-5 row-span-4">
-    <h2 class="modulo-h2">
-      Suma las longitudes de las dos bases y luego multiplica por la altura
-    </h2>
-  </div>
-  <a
-    href="#"
-    class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
-    id="6"
-    >Click para continuar</a
-  >
-</section>
-<script type="module" src="./lib/raphael/raphael.mod2.b1.js"></script>
-<script src="./lib/anime/modulo2/b1.js"></script>
+      <div class="col-start-6 row-start-5 col-span-5 row-span-4">
+        <h2 class="modulo-h2">
+          Suma las longitudes de las dos bases y luego multiplica por la altura
+        </h2>
+      </div>
+      <a
+        href="../lecciones/modulo2Lecciones.html"
+        class="col-start-5 row-start-12 col-span-4 text-center font-semibold text-secondary-400 text-xl font-Open-Sans"
+        id="6"
+        >Click para continuar</a
+      >
+    </section>
+    <script
+      type="module"
+      src="../../renderer/lib/raphael/raphael.mod2.b1.js"
+    ></script>
+    <script src="../../renderer/lib/anime/modulo2/b1.js"></script>
+    <script src="../../renderer/app.js"></script>
+  </body>
+</html>

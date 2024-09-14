@@ -1,123 +1,142 @@
-<div
-  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
-  id="respuestaIncorrecta"
->
-  <div
-    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
-  >
-    <h1 class="text-6xl text-red-500">Incorrecto</h1>
-    <h2 class="text-4xl text-red-500">Vuelve a intentar</h2>
-  </div>
-</div>
-<div
-  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
-  id="respuestaCorrecta"
->
-  <div
-    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
-  >
-    <h1 class="text-6xl text-green-500">Respuesta correcta!</h1>
-    <h2 class="text-4xl text-green-500">Bien hecho!</h2>
-  </div>
-</div>
-<section class="cuadricula bordes" id="ejercicio1">
-  <h1 class="modulo-h1">Triangulo</h1>
-  <article class="img row-start-3 col-start-5 row-span-4 col-span-4">
-    <img
-      src="../assets/images/realidad/triangulo1.jpeg"
-      alt=""
-      class="w-full h-full"
-    />
-  </article>
-  <h2 class="modulo-h2 col-start-2 row-start-8 col-span-10">
-    Un techo tiene forma de triángulo isósceles. Si la base mide 6 metros y la
-    altura 4 metros, ¿Cuál es el área del techo?
-  </h2>
-  <input
-    type="number"
-    class="col-start-3 row-start-10 col-span-5 outline-none border-2 border-black p-4"
-    id="respuestaEjercicio1"
-  />
-  <button
-    class="col-start-9 row-start-10 col-span-2 bg-primary-950 text-secondary-400 font-bold rounded-lg hover:opacity-75 active:opacity-50"
-    id="btnEjercicio1"
-  >
-    Responder
-  </button>
-</section>
-<section class="cuadricula bordes" id="ejercicio2">
-  <h1 class="modulo-h1">Rectangulo</h1>
-  <article class="img row-start-3 col-start-5 row-span-4 col-span-4">
-    <img
-      src="../assets/images/realidad/rectangulo1.jpeg"
-      alt=""
-      class="w-full h-full"
-    />
-  </article>
-  <h2 class="modulo-h2 col-start-2 row-start-8 col-span-10">
-    Un jardín tiene forma de rectángulo. Si mide 8 metros de largo y 5 metros de
-    ancho, ¿Cuántos metros de cerca se necesitan para rodearlo?
-  </h2>
-  <input
-    type="number"
-    class="col-start-3 row-start-10 col-span-5 outline-none border-2 border-black p-4"
-    id="respuestaEjercicio2"
-  />
-  <button
-    class="col-start-9 row-start-10 col-span-2 bg-primary-950 text-secondary-400 font-bold rounded-lg hover:opacity-75 active:opacity-50"
-    id="btnEjercicio2"
-  >
-    Responder
-  </button>
-</section>
-<section class="cuadricula bordes" id="Ejercicio3">
-  <h1 class="modulo-h1">Rombo</h1>
-  <article class="img row-start-3 col-start-5 row-span-4 col-span-4">
-    <img
-      src="../assets/images/realidad/rombo1.jpeg"
-      alt=""
-      class="w-full h-full"
-    />
-  </article>
-  <h2 class="modulo-h2 col-start-2 row-start-8 col-span-10">
-    Una ventana tiene forma de rombo. Si cada lado mide 40 cm, ¿Cuál es su
-    perímetro?
-  </h2>
-  <input
-    type="number"
-    class="col-start-3 row-start-10 col-span-5 outline-none border-2 border-black p-4"
-    id="respuestaEjercicio3"
-  />
-  <button
-    class="col-start-9 row-start-10 col-span-2 bg-primary-950 text-secondary-400 font-bold rounded-lg hover:opacity-75 active:opacity-50"
-    id="btnEjercicio3"
-  >
-    Responder
-  </button>
-</section>
-<section class="cuadricula bordes" id="Ejercicio4">
-  <h1 class="modulo-h1">Trapecio</h1>
-  <article class="img row-start-3 col-start-5 row-span-4 col-span-4">
-    <img
-      src="../assets/images/realidad/trapecio1.jpg"
-      alt=""
-      class="w-full h-full"
-    />
-  </article>
-  <h2 class="modulo-h2 col-start-2 row-start-8 col-span-10">
-    Una ventana tiene forma de trapecio isósceles. Si las bases miden 1.2 m y
-    0.8 m, y la altura es de 0.6 m, ¿Cuál es su área?
-  </h2>
-  <input
-    type="number"
-    class="col-start-3 row-start-10 col-span-5 outline-none border-2 border-black p-4"
-    id="respuestaEjercicio4"
-  />
-  <button
-    class="col-start-9 row-start-10 col-span-2 bg-primary-950 text-secondary-400 font-bold rounded-lg hover:opacity-75 active:opacity-50"
-    id="btnEjercicio4"
-  >
-    Responder
-  </button>
-</section>
-<script src="./lib/preguntas/mod4.d1.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flat-World</title>
+    <link rel="stylesheet" href="../../assets/styles/main.css" />
+    <script
+      type="module"
+      src="../../../node_modules/raphael/raphael.min.js"
+    ></script>
+    <script src="../../../node_modules/animejs/lib/anime.min.js"></script>
+    <script src="../../services/three.js"></script>
+  </head>
+  <body class="overflow-hidden">
+    <div
+      class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+      id="respuestaIncorrecta"
+    >
+      <div
+        class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+      >
+        <h1 class="text-6xl text-red-500">Incorrecto</h1>
+        <h2 class="text-4xl text-red-500">Vuelve a intentar</h2>
+      </div>
+    </div>
+    <div
+      class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+      id="respuestaCorrecta"
+    >
+      <div
+        class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+      >
+        <h1 class="text-6xl text-green-500">Respuesta correcta!</h1>
+        <h2 class="text-4xl text-green-500">Bien hecho!</h2>
+      </div>
+    </div>
+    <section class="cuadricula bordes" id="ejercicio1">
+      <h1 class="modulo-h1">Triangulo</h1>
+      <article class="img row-start-3 col-start-5 row-span-4 col-span-4">
+        <img
+          src="../../assets/images/realidad/triangulo1.jpeg"
+          alt=""
+          class="w-full h-full"
+        />
+      </article>
+      <h2 class="modulo-h2 col-start-2 row-start-8 col-span-10">
+        Un techo tiene forma de triángulo isósceles. Si la base mide 6 metros y
+        la altura 4 metros, ¿Cuál es el área del techo?
+      </h2>
+      <input
+        type="number"
+        class="col-start-3 row-start-10 col-span-5 outline-none border-2 border-black p-4"
+        id="respuestaEjercicio1"
+      />
+      <button
+        class="col-start-9 row-start-10 col-span-2 bg-primary-950 text-secondary-400 font-bold rounded-lg hover:opacity-75 active:opacity-50"
+        id="btnEjercicio1"
+      >
+        Responder
+      </button>
+    </section>
+    <section class="cuadricula bordes" id="ejercicio2">
+      <h1 class="modulo-h1">Rectangulo</h1>
+      <article class="img row-start-3 col-start-5 row-span-4 col-span-4">
+        <img
+          src="../../assets/images/realidad/rectangulo1.jpeg"
+          alt=""
+          class="w-full h-full"
+        />
+      </article>
+      <h2 class="modulo-h2 col-start-2 row-start-8 col-span-10">
+        Un jardín tiene forma de rectángulo. Si mide 8 metros de largo y 5
+        metros de ancho, ¿Cuántos metros de cerca se necesitan para rodearlo?
+      </h2>
+      <input
+        type="number"
+        class="col-start-3 row-start-10 col-span-5 outline-none border-2 border-black p-4"
+        id="respuestaEjercicio2"
+      />
+      <button
+        class="col-start-9 row-start-10 col-span-2 bg-primary-950 text-secondary-400 font-bold rounded-lg hover:opacity-75 active:opacity-50"
+        id="btnEjercicio2"
+      >
+        Responder
+      </button>
+    </section>
+    <section class="cuadricula bordes" id="Ejercicio3">
+      <h1 class="modulo-h1">Rombo</h1>
+      <article class="img row-start-3 col-start-5 row-span-4 col-span-4">
+        <img
+          src="../../assets/images/realidad/rombo1.jpeg"
+          alt=""
+          class="w-full h-full"
+        />
+      </article>
+      <h2 class="modulo-h2 col-start-2 row-start-8 col-span-10">
+        Una ventana tiene forma de rombo. Si cada lado mide 40 cm, ¿Cuál es su
+        perímetro?
+      </h2>
+      <input
+        type="number"
+        class="col-start-3 row-start-10 col-span-5 outline-none border-2 border-black p-4"
+        id="respuestaEjercicio3"
+      />
+      <button
+        class="col-start-9 row-start-10 col-span-2 bg-primary-950 text-secondary-400 font-bold rounded-lg hover:opacity-75 active:opacity-50"
+        id="btnEjercicio3"
+      >
+        Responder
+      </button>
+    </section>
+    <section class="cuadricula bordes" id="Ejercicio4">
+      <h1 class="modulo-h1">Trapecio</h1>
+      <article class="img row-start-3 col-start-5 row-span-4 col-span-4">
+        <img
+          src="../../assets/images/realidad/trapecio1.jpg"
+          alt=""
+          class="w-full h-full"
+        />
+      </article>
+      <h2 class="modulo-h2 col-start-2 row-start-8 col-span-10">
+        Una ventana tiene forma de trapecio isósceles. Si las bases miden 1.2 m
+        y 0.8 m, y la altura es de 0.6 m, ¿Cuál es su área?
+      </h2>
+      <input
+        type="number"
+        class="col-start-3 row-start-10 col-span-5 outline-none border-2 border-black p-4"
+        id="respuestaEjercicio4"
+      />
+      <button
+        class="col-start-9 row-start-10 col-span-2 bg-primary-950 text-secondary-400 font-bold rounded-lg hover:opacity-75 active:opacity-50"
+        id="btnEjercicio4"
+      >
+        Responder
+      </button>
+    </section>
+    <script src="../../renderer/lib/preguntas/mod4.d1.js"></script>
+
+    <script src="../../renderer/app.js"></script>
+  </body>
+</html>

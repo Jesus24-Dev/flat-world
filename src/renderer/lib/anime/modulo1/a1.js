@@ -48,7 +48,7 @@ function moverContenedor(id) {
       avanzar(areaPerimetro);
       break;
     case "5":
-      alert("Este es el final");
+      window.location.href = "../lecciones/modulo1Lecciones.html";
       break;
   }
 }
