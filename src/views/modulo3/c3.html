@@ -1,3 +1,25 @@
+<div
+  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+  id="respuestaIncorrecta"
+>
+  <div
+    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+  >
+    <h1 class="text-6xl text-red-500">Incorrecto</h1>
+    <h2 class="text-4xl text-red-500">Vuelve a intentar</h2>
+  </div>
+</div>
+<div
+  class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+  id="respuestaCorrecta"
+>
+  <div
+    class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
+  >
+    <h1 class="text-6xl text-green-500">Respuesta correcta!</h1>
+    <h2 class="text-4xl text-green-500">Bien hecho!</h2>
+  </div>
+</div>
 <section class="cuadricula bordes absolute" id="defineCubo">
   <h1 class="modulo-h1">Cubo</h1>
   <h2 class="modulo-h2 col-start-2 row-start-4 col-span-5 row-span-5">
@@ -68,22 +90,19 @@
       <h2 class="modulo-h2">
         Un cubo tiene una arista de 3 cm. ¿Cuál es su volumen?
       </h2>
-      <a
-        href="#"
-        class="text-secondary-400 font-semibold text-xl hover:text-secondary-500 text-center"
-        >Ver respuesta</a
-      >
     </aside>
     <aside class="flex">
       <input
-        type="text"
+        type="number"
         class="w-11/12 h-12 text-lg text-primary-950 font-medium font-Poppins p-4 placeholder:font-semibold placeholder:text-primary-950/75 outline-none"
         placeholder="Respuesta"
+        id="respuestaCubo"
       />
       <button
         class="bg-secondary-400 w-1/12 hover:bg-secondary-500 active:bg-secondary-600"
+        id="btnCubo"
       >
-        ->
+        <img src="../assets/images/flecha.png" alt="" />
       </button>
     </aside>
   </article>

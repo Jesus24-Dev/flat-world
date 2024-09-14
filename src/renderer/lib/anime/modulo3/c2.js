@@ -58,3 +58,78 @@ function avanzar(container) {
     },
   });
 }
+
+const respuestaPiramide = document.querySelector("#respuestaPiramide");
+const btnPiramide = document.querySelector("#btnPiramide");
+
+const resultado = 120;
+
+btnPiramide.addEventListener("click", () => {
+  let respuesta = respuestaPiramide.value;
+  if (comprobarVacio(respuestaPiramide)) {
+    return;
+  }
+
+  if (respuesta == resultado) {
+    mostrarRespuestaCorrecta();
+  } else {
+    mostrarRespuestaIncorrecta();
+  }
+});
+
+const respuestaCorrecta = document.querySelector("#respuestaCorrecta");
+const respuestaIncorrecta = document.querySelector("#respuestaIncorrecta");
+
+function mostrarRespuestaCorrecta() {
+  anime({
+    targets: respuestaCorrecta,
+    duration: 1000,
+    opacity: [0, 1],
+    delay: 200,
+    begin: function () {
+      respuestaCorrecta.classList.remove("hidden");
+      respuestaCorrecta.classList.add("grid");
+    },
+    complete: function () {
+      this.opacity = [1, 0];
+      this.duration = 500;
+      respuestaCorrecta.classList.add("hidden");
+      respuestaCorrecta.classList.remove("grid");
+    },
+  });
+}
+
+function mostrarRespuestaIncorrecta() {
+  anime({
+    targets: respuestaIncorrecta,
+    duration: 1000,
+    opacity: [0, 1],
+    delay: 200,
+    begin: function () {
+      respuestaIncorrecta.classList.remove("hidden");
+      respuestaIncorrecta.classList.add("grid");
+    },
+    complete: function () {
+      this.opacity = [1, 0];
+      this.duration = 500;
+      respuestaIncorrecta.classList.add("hidden");
+      respuestaIncorrecta.classList.remove("grid");
+    },
+  });
+}
+
+function comprobarVacio(input) {
+  if (!input.value) {
+    input.placeholder = "Ingresa un valor antes de verificar";
+    input.classList.remove("placeholder:text-primary-950/75");
+    input.classList.add("inputError");
+    setTimeout(() => {
+      input.classList.add("placeholder:text-primary-950/75");
+      input.classList.remove("inputError");
+      input.placeholder = "Respuesta";
+    }, 750);
+    return true;
+  } else {
+    return;
+  }
+}
