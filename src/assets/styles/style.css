@@ -107,7 +107,7 @@
 }
 
 .inputFormulario {
-  @apply h-12 px-2 text-orange-300 font-Open-Sans placeholder:text-orange-300 outline-none rounded-lg focus:placeholder:transition-transform focus:placeholder:duration-300 focus:placeholder:-translate-y-3.5 focus:text-xs ease-in duration-300 bg-blue-100;
+  @apply h-12 px-2 text-orange-300 font-Open-Sans font-bold p-2 text-lg placeholder:text-orange-300 outline-none rounded-lg focus:placeholder:transition-transform focus:placeholder:duration-300 focus:placeholder:-translate-y-3.5 focus:text-xs ease-in duration-300 bg-blue-100;
 }
 
 .card {
