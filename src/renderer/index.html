@@ -14,7 +14,6 @@
   </head>
   <body class="overflow-hidden">
     <div class="cuadricula bg-intro bg-cover bg-no-repeat">
-      <button class="col-start-1 row-start-1">SALIR</button>
       <div class="col-start-2 row-start-1 col-span-2 row-span-3">
         <img src="../assets/images/logo.png" alt="" />
       </div>
@@ -25,9 +24,9 @@
           FLAT <span class="font-bold">WORLD</span>
         </h1>
         <p class="parrafo font-extralight text-3xl italic text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-          quod ducimus vel perspiciatis labore, voluptatibus, corrupti illo amet
-          nesciunt nostrum, error sunt inventore ullam blanditiis.
+          ¡Acepta el desafío geométrico! Pon a prueba tus habilidades y resuelve
+          enigmas cada vez más complejos. ¡Descubrirás que la geometría es más
+          que solo figuras, es una aventura para tu mente!
         </p>
         <button
           class="text-2xl font-bold tracking-wider text-blue-950 border-4 border-blue-950 rounded-3xl p-4 bg-white hover:bg-blue-950 hover:text-yellow-500 active:opacity-75"
@@ -67,7 +66,7 @@
             <input class="inputFormulario" type="number" placeholder="Nombre" />
             <input class="inputFormulario" type="text" placeholder="Apellido" />
             <select name="seccion" id="seccion" class="inputFormulario">
-              <option value="" disabled>Escoge tu seccion</option>
+              <option value="" disabled selected>Escoge tu seccion</option>
               <option value="1">A</option>
               <option value="2">B</option>
               <option value="3">C</option>
@@ -82,7 +81,7 @@
                 href=""
                 class="text-yellow-500 font-bold text-2xl hover:text-yellow-600 font-Open-Sans"
                 id="btnTengoCuenta"
-                >Ya tengo una cuenta</a
+                >Ya he jugado antes</a
               >
             </div>
           </div>
@@ -105,12 +104,13 @@
             <h3 class="titulo text-3xl text-center font-medium">
               Bienvenido! Inicia sesion para continuar.
             </h3>
-            <input class="inputFormulario" placeholder="Nickname o cedula" />
-            <input
-              class="inputFormulario"
-              type="password"
-              placeholder="Clave"
-            />
+            <input class="inputFormulario" placeholder="Cedula" />
+            <select name="seccion" id="seccion" class="inputFormulario">
+              <option value="" disabled selected>Escoge tu seccion</option>
+              <option value="1">A</option>
+              <option value="2">B</option>
+              <option value="3">C</option>
+            </select>
             <a
               href="../views/paginaPrincipal.html"
               class="botonFormulario text-center"
