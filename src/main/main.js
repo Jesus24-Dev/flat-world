@@ -1,8 +1,10 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain, Menu } = require("electron");
 const path = require("path");
+const Perfil = require("./db");
 
 let win;
 let loadingWindow;
+let isLoadingWindowClosed = false;
 
 function createLoadingWindow() {
   loadingWindow = new BrowserWindow({
@@ -24,27 +26,30 @@ function createLoadingWindow() {
   });
 }
 
-function createWindow() {
+async function createWindow() {
   win = new BrowserWindow({
-    resizable: false,
+    // resizable: false,
     title: "Flat World",
     icon: "./src/assets/images/logo.png",
-    fullscreen: true,
+    // fullscreen: true,
     show: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      preload: path.join(__dirname, "preload.js"),
     },
   });
   win.loadFile("./src/renderer/index.html");
-  win.webContents.on("did-finish-load", () => {
+  win.webContents.once("did-finish-load", () => {
     setTimeout(() => {
-      loadingWindow.close();
+      if (loadingWindow && !isLoadingWindowClosed) {
+        loadingWindow.close();
+        isLoadingWindowClosed = true;
+      }
       win.show();
     }, 1000);
   });
 
+  await Perfil.crearConexion();
   win.on("closed", () => {
     win = null;
   });
@@ -55,6 +60,27 @@ app.whenReady().then(() => {
   createWindow();
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+
+  ipcMain.handle("registrarUsuario", async (event, datos) => {
+    const { cedula, nombre, apellido, seccion } = datos;
+    try {
+      await Perfil.crearEstudiante(cedula, nombre, apellido, seccion);
+      return true;
+    } catch (err) {
+      if (err.name == "SequelizeUniqueConstraintError") {
+        return false;
+      }
+    }
+  });
+
+  ipcMain.handle("sesionUsuario", async (event, datos) => {
+    const { cedula, seccion } = datos;
+    try {
+      return await Perfil.encontrarEstudiante(cedula, seccion);
+    } catch (err) {
+      return err;
+    }
   });
 });
 

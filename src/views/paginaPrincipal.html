@@ -28,9 +28,7 @@
           <h5
             class="text-center font-bold text-secondary-400 text-lg font-Poppins"
             id="nombreUsuario"
-          >
-            Jesus Sirit
-          </h5>
+          ></h5>
           <h3
             class="text-center font-bold text-secondary-400 text-lg font-Poppins"
           >
@@ -40,7 +38,7 @@
         <p
           class="text-center font-bold text-secondary-400 text-lg font-Poppins"
         >
-          Seccion <span id="seccionUsuario">A</span>
+          Seccion <span id="seccionUsuario"></span>
         </p>
       </aside>
       <div class="card card-yellow" id="carta1">
@@ -147,6 +145,13 @@
 
     <script src="../renderer/lib/anime/principal.js"></script>
 
-    <script src="../renderer/app.js"></script>
+    <script>
+      const nombreUsuario = document.querySelector("#nombreUsuario");
+      const seccionUsuario = document.querySelector("#seccionUsuario");
+      const datosEstudiante = sessionStorage.getItem("datos");
+      const datosJson = JSON.parse(datosEstudiante);
+      nombreUsuario.innerHTML = `${datosJson.nombre} ${datosJson.apellido}`;
+      seccionUsuario.innerHTML = datosJson.seccion;
+    </script>
   </body>
 </html>
