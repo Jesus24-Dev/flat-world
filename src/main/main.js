@@ -28,10 +28,10 @@ function createLoadingWindow() {
 
 async function createWindow() {
   win = new BrowserWindow({
-    // resizable: false,
+    resizable: false,
     title: "Flat World",
     icon: "./src/assets/images/logo.png",
-    // fullscreen: true,
+    fullscreen: true,
     show: false,
     webPreferences: {
       nodeIntegration: true,
@@ -55,8 +55,23 @@ async function createWindow() {
   });
 }
 
+function createMenu() {
+  const menuTemplate = [
+    {
+      label: "Salir",
+      click() {
+        app.quit(); // Cierra la aplicación
+      },
+    },
+  ];
+
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu); // Establece el menú para la aplicación
+}
+
 app.whenReady().then(() => {
   createLoadingWindow();
+  createMenu();
   createWindow();
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();

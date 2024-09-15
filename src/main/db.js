@@ -3,7 +3,7 @@ const { Estudiante, Seccion } = require("../db/models/index");
 
 class Perfil {
   static async crearConexion() {
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
     await Perfil.llenarDatos();
   }
 
