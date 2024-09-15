@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [class*="loader"] {
+        width: 15em;
+      }
+
+      .loader4 {
+        animation: 3s background-move linear infinite alternate;
+        background-size: 100%;
+        background-image: -webkit-gradient(
+          linear,
+          0% 50%,
+          100% 50%,
+          color-stop(0%, #dcf1ff),
+          color-stop(33%, #ffb517),
+          color-stop(66%, #00294d),
+          color-stop(100%, #ffe288)
+        );
+        background-image: -moz-linear-gradient(
+          left,
+          #dcf1ff 0%,
+          #ffb517 33%,
+          #00294d 66%,
+          #ffe288 100%
+        );
+        background-image: -webkit-linear-gradient(
+          left,
+          #dcf1ff 0%,
+          #ffb517 33%,
+          #00294d 66%,
+          #ffe288 100%
+        );
+        background-image: linear-gradient(
+          to right,
+          #dcf1ff 0%,
+          #ffb517 33%,
+          #00294d 66%,
+          #ffe288 100%
+        );
+        background-size: 300%;
+        height: 3rem;
+        position: relative;
+      }
+      .loader4 div {
+        animation: 3s text-color infinite linear alternate;
+        background-color: white;
+        background-size: 100%;
+
+        color: #00294d;
+        font-size: 1.5rem;
+        height: 2.8rem;
+        left: 0.15rem;
+        line-height: 2;
+        position: absolute;
+        text-transform: uppercase;
+        text-align: center;
+        text-shadow: 0 0 1em #ffb517;
+        top: 0.1rem;
+        width: 14.75rem;
+      }
+
+      @keyframes background-move {
+        0% {
+          background-position: left center;
+          box-shadow: 0 0 1em #dcf1ff;
+        }
+        33% {
+          box-shadow: 0 0 1em #ffb517;
+        }
+        66% {
+          box-shadow: 0 0 1em #00294d;
+        }
+        100% {
+          background-position: right center;
+          box-shadow: 0 0 1em #ffe288;
+        }
+      }
+      @keyframes text-color {
+        0% {
+          color: #dcf1ff;
+          text-shadow: 0 0 1em #dcf1ff;
+        }
+        50% {
+          color: #ffb517;
+          text-shadow: 0 0 1em #ffb517;
+        }
+        100% {
+          color: #00294d;
+          text-shadow: 0 0 1em #00294d;
+        }
+      }
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        background-color: white;
+        height: 450px;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      img {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="../assets/images/logo.png" alt="" />
+      <div class="loader4">
+        <div>Cargando</div>
+      </div>
+    </div>
+  </body>
+</html>
