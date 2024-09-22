@@ -4,7 +4,14 @@ const carta3 = document.querySelector("#carta3");
 const carta4 = document.querySelector("#carta4");
 const adelante = document.querySelector("#adelante");
 const atras = document.querySelector("#atras");
+const moduloActualSpan = document.querySelector("#moduloActual");
 let moduloActual = 1;
+
+function actualizarModuloActual() {
+  moduloActualSpan.innerHTML = moduloActual;
+}
+
+actualizarModuloActual();
 
 carta2.style.transform = "translateX(1000px)";
 carta3.style.transform = "translateX(1000px)";
@@ -18,14 +25,17 @@ function moverAdelante() {
     moverAnime(carta1, -1500);
     moverAnime(carta2, 0);
     moduloActual = 2;
+    actualizarModuloActual();
   } else if (moduloActual === 2) {
     moverAnime(carta2, -1500);
     moverAnime(carta3, 0);
     moduloActual = 3;
+    actualizarModuloActual();
   } else if (moduloActual === 3) {
     moverAnime(carta3, -1500);
     moverAnime(carta4, 0);
     moduloActual = 4;
+    actualizarModuloActual();
   } else {
     return;
   }
@@ -36,14 +46,17 @@ function moverAtras() {
     moverAnime(carta4, -1500);
     moverAnime(carta3, 0);
     moduloActual = 3;
+    actualizarModuloActual();
   } else if (moduloActual === 3) {
     moverAnime(carta3, -1500);
     moverAnime(carta2, 0);
     moduloActual = 2;
+    actualizarModuloActual();
   } else if (moduloActual === 2) {
     moverAnime(carta2, -1500);
     moverAnime(carta1, 0);
     moduloActual = 1;
+    actualizarModuloActual();
   } else {
     return;
   }
