@@ -8,10 +8,9 @@ class Perfil {
   }
 
   static async llenarDatos() {
-    const count = await Seccion.count(); // Cuenta los registros en la tabla
+    const count = await Seccion.count();
 
     if (count === 0) {
-      // Si no hay registros, poblar la tabla
       await Seccion.bulkCreate([
         { nombre: "A" },
         { nombre: "B" },
