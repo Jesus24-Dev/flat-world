@@ -39,6 +39,7 @@ botonRegistro.addEventListener("click", async (e) => {
       registroError.classList.add("hidden");
     }, 2000);
   } else {
+    ipcRenderer.send("login-exitoso");
     sessionStorage.setItem("cedula", cedula);
     sessionStorage.setItem("datos", JSON.stringify(datos));
     window.location.href = "../views/paginaPrincipal.html";
@@ -76,6 +77,7 @@ botonInicio.addEventListener("click", async (e) => {
       inicioError.classList.add("hidden");
     }, 2000);
   } else {
+    ipcRenderer.send("login-exitoso");
     sessionStorage.setItem("cedula", cedula);
     sessionStorage.setItem("datos", JSON.stringify(resultado));
     window.location.href = "../views/paginaPrincipal.html";

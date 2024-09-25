@@ -1,9 +1,10 @@
-const { app, BrowserWindow, ipcMain, Menu } = require("electron");
+const { app, BrowserWindow, ipcMain, Menu, dialog } = require("electron");
 const path = require("path");
 const Perfil = require("./db");
 
 let win;
 let loadingWindow;
+let menuTemplate;
 let isLoadingWindowClosed = false;
 
 function createLoadingWindow() {
@@ -28,6 +29,7 @@ function createLoadingWindow() {
 
 async function createWindow() {
   win = new BrowserWindow({
+    alwaysOnTop: true,
     resizable: false,
     title: "Flat World",
     icon: "./src/assets/images/logo.png",
@@ -53,20 +55,56 @@ async function createWindow() {
   win.on("closed", () => {
     win = null;
   });
+
+  ipcMain.on("login-exitoso", () => {
+    menuTemplate[0].submenu[1].enabled = true;
+    const menu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(menu);
+  });
 }
 
 function createMenu() {
-  const menuTemplate = [
+  menuTemplate = [
     {
-      label: "Salir",
-      click() {
-        app.quit(); // Cierra la aplicación
-      },
+      label: "Opciones",
+      submenu: [
+        {
+          label: "Salir de aplicación",
+          click() {
+            const choice = dialog.showMessageBoxSync(win, {
+              type: "question",
+              buttons: ["Yes", "No"],
+              title: "Confirmar",
+              message: "¿Estás seguro de que quieres salir de la aplicación?",
+            });
+
+            if (choice === 0) {
+              app.quit();
+            }
+          },
+        },
+        {
+          label: "Salir de la lección",
+          enabled: false,
+          click() {
+            const choice = dialog.showMessageBoxSync(win, {
+              type: "question",
+              buttons: ["Yes", "No"],
+              title: "Confirmar",
+              message: "¿Estás seguro de que quieres salir de la lección?",
+            });
+
+            if (choice === 0) {
+              win.webContents.send("salir-leccion");
+            }
+          },
+        },
+      ],
     },
   ];
 
   const menu = Menu.buildFromTemplate(menuTemplate);
-  Menu.setApplicationMenu(menu); // Establece el menú para la aplicación
+  Menu.setApplicationMenu(menu);
 }
 
 app.whenReady().then(() => {
