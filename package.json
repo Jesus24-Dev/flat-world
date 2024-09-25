@@ -6,28 +6,7 @@
   "scripts": {
     "start": "electron .",
     "build": "tailwindcss -i ./src/assets/styles/style.css -o ./src/assets/styles/main.css --watch",
-    "dev": "vite .",
-    "buildApp": "electron-builder"
-  },
-  "build": {
-    "appId": "com.myapp.flatWorld",
-    "productName": "Flat World",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "node_modules/",
-      "src/",
-      "package.json",
-      "tailwind.config.js",
-      "!**.gitignore",
-      "!**README.md",
-      "!**package-lock.json"
-    ],
-    "win": {
-      "target": "nsis",
-      "icon": "src/assets/images/logo.png"
-    }
+    "dev": "vite ."
   },
   "repository": {
     "type": "git",
@@ -56,7 +35,7 @@
   "devDependencies": {
     "dotenv": "^16.4.5",
     "electron": "^32.0.1",
-    "electron-builder": "^25.0.5",
+    "electron-packager": "^17.1.2",
     "vite": "^5.4.2"
   }
 }
