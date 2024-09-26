@@ -725,10 +725,6 @@ video {
   grid-column-start: 1;
 }
 
-.col-start-10 {
-  grid-column-start: 10;
-}
-
 .col-start-11 {
   grid-column-start: 11;
 }
