@@ -62,7 +62,7 @@ function avanzar(container) {
 const respuestaCono = document.querySelector("#respuestaCono");
 const btnCono = document.querySelector("#btnCono");
 
-const resultado = 90;
+const resultado = 94.2;
 
 btnCono.addEventListener("click", () => {
   let respuesta = respuestaCono.value;

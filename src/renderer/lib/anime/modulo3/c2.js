@@ -62,7 +62,7 @@ function avanzar(container) {
 const respuestaPiramide = document.querySelector("#respuestaPiramide");
 const btnPiramide = document.querySelector("#btnPiramide");
 
-const resultado = 120;
+const resultado = 20;
 
 btnPiramide.addEventListener("click", () => {
   let respuesta = respuestaPiramide.value;
