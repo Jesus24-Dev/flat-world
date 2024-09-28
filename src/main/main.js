@@ -66,7 +66,7 @@ async function createWindow() {
 function createMenu() {
   menuTemplate = [
     {
-      label: "Opciones",
+      label: "Salir",
       submenu: [
         {
           label: "Salir de aplicación",
