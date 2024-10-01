@@ -1,3 +1,15 @@
+const { ipcRenderer } = require("electron");
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 const perimetroTriangulo1 = document.querySelector("#perimetroTriangulo1");
 const respuestaPerimetroTriangulo1 = document.querySelector(
   "#respuestaPerimetroTriangulo1"
@@ -39,8 +51,10 @@ btnPerimetroTriangulo1.addEventListener("click", () => {
 
   if (respuesta == respuesta1) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(perimetroTriangulo1);
 });
@@ -53,8 +67,10 @@ btnPerimetroTriangulo2.addEventListener("click", () => {
 
   if (respuesta == respuesta2) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(perimetroTriangulo2);
 });
@@ -67,8 +83,10 @@ btnAreaTriangulo.addEventListener("click", () => {
 
   if (respuesta == respuesta3) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(areaTriangulo);
 });
@@ -81,8 +99,10 @@ btnCuadradoPerimetro.addEventListener("click", () => {
 
   if (respuesta == respuesta4) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(cuadradoPerimetro);
 });
@@ -105,10 +125,12 @@ btnRectanguloPerimetro.addEventListener("click", () => {
 
   if (respuesta == respuesta5) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
-    avanzarPregunta(rectanguloPerimetro);
+    aumentarFallo();
   }
+  avanzarPregunta(rectanguloPerimetro);
 });
 
 const cuadradoArea = document.querySelector("#cuadradoArea");
@@ -125,8 +147,10 @@ btnCuadradoArea.addEventListener("click", () => {
 
   if (respuesta == respuesta6) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(cuadradoArea);
 });
@@ -147,8 +171,10 @@ btnRectanguloArea.addEventListener("click", () => {
 
   if (respuesta == respuesta7) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   setTimeout(function () {
     window.location.href = "../lecciones/modulo1Lecciones.html";

@@ -135,8 +135,29 @@ app.whenReady().then(() => {
       return err;
     }
   });
+
+  ipcMain.on("aumentarFallos", async (event, cedula) => {
+    const fechaActual = obtenerFechaActual();
+    await Perfil.aumentarFallos(cedula, fechaActual);
+  });
+
+  ipcMain.on("aumentarAciertos", async (event, cedula) => {
+    const fechaActual = obtenerFechaActual();
+    await Perfil.aumentarAciertos(cedula, fechaActual);
+  });
 });
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
+
+function obtenerFechaActual() {
+  const fechaActual = new Date();
+  const dia = fechaActual.getDate();
+  const mes = fechaActual.getMonth() + 1;
+  const anio = fechaActual.getFullYear();
+
+  const fechaCompleta = `${dia}-${mes}-${anio}`;
+
+  return fechaCompleta;
+}

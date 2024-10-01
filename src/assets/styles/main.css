@@ -1647,6 +1647,11 @@ video {
   color: rgb(161 98 7 / var(--tw-text-opacity));
 }
 
+.hover\:text-secondary-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(249 149 7 / var(--tw-text-opacity));
+}
+
 .hover\:opacity-75:hover {
   opacity: 0.75;
 }

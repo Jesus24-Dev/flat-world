@@ -12,7 +12,7 @@ Resultados.init(
       allowNull: false,
       references: {
         model: Estudiante,
-        key: "CEDULA",
+        key: "cedula",
       },
     },
     fecha: {
@@ -37,10 +37,5 @@ Resultados.init(
 );
 
 Resultados.primaryKeyAttributes = ["CEDULA", "FECHA"];
-
-Resultados.beforeCreate((resultado) => {
-  const [day, month, year] = resultado.FECHA.split("-");
-  resultado.FECHA = `${day.padStart(2, "0")}-${month.padStart(2, "0")}-${year}`;
-});
 
 module.exports = Resultados;
