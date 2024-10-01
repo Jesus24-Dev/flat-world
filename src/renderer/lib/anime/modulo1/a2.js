@@ -15,7 +15,11 @@ botones.forEach((boton) => {
   boton.addEventListener("click", (e) => {
     e.preventDefault();
     let id = boton.id;
-    moverContenedor(id);
+    if (id > 0) {
+      moverContenedor(id);
+    } else {
+      moverContenedorAtras(id);
+    }
   });
 });
 
@@ -35,10 +39,31 @@ function moverContenedor(id) {
   }
 }
 
+function moverContenedorAtras(id) {
+  switch (id) {
+    case "-1":
+      avanzar(defineCuadrilatero);
+      quitar2(defineCuadrado);
+      break;
+    case "-2":
+      avanzar(defineCuadrado);
+      quitar2(defineRectangulo);
+      break;
+  }
+}
+
 function quitar(container) {
   anime({
     targets: container,
     translateX: -1700,
+    duration: 200,
+    easing: "linear",
+  });
+}
+function quitar2(container) {
+  anime({
+    targets: container,
+    translateX: 1700,
     duration: 200,
     easing: "linear",
   });
