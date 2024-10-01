@@ -1,3 +1,19 @@
+const { ipcRenderer } = require("electron");
+
+ipcRenderer.on("salir-leccion", () => {
+  window.location.href = "../paginaPrincipal.html";
+});
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 const perimetroTrapecio = document.querySelector("#perimetroTrapecio");
 const respuestaPerimetroTrapecio = document.querySelector(
   "#respuestaPerimetroTrapecio"
@@ -14,8 +30,10 @@ btnPerimetroTrapecio.addEventListener("click", () => {
 
   if (respuesta == respuesta1) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(perimetroTrapecio);
 });
@@ -32,11 +50,12 @@ btnAreaTrapecio.addEventListener("click", () => {
     return;
   }
 
-  window.location.href = "../lecciones/modulo2Lecciones.html";
   if (respuesta == respuesta2) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   setTimeout(() => {
     window.location.href = "../lecciones/modulo2Lecciones.html";

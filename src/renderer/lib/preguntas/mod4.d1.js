@@ -1,3 +1,19 @@
+const { ipcRenderer } = require("electron");
+
+ipcRenderer.on("salir-leccion", () => {
+  window.location.href = "../paginaPrincipal.html";
+});
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 const ejercicio1 = document.querySelector("#ejercicio1");
 const respuestaEjercicio1 = document.querySelector("#respuestaEjercicio1");
 const btnEjercicio1 = document.querySelector("#btnEjercicio1");
@@ -12,8 +28,10 @@ btnEjercicio1.addEventListener("click", () => {
 
   if (respuesta == resultado1) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(ejercicio1);
 });
@@ -32,8 +50,10 @@ btnEjercicio2.addEventListener("click", () => {
 
   if (respuesta == resultado2) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(ejercicio2);
 });
@@ -52,8 +72,10 @@ btnEjercicio3.addEventListener("click", () => {
 
   if (respuesta == resultado3) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   avanzarPregunta(Ejercicio3);
 });
@@ -72,8 +94,10 @@ btnEjercicio4.addEventListener("click", () => {
 
   if (respuesta == resultado4) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   setTimeout(() => {
     window.location.href = "../lecciones/modulo4Lecciones.html";

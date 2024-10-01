@@ -1,3 +1,19 @@
+const { ipcRenderer } = require("electron");
+
+ipcRenderer.on("salir-leccion", () => {
+  window.location.href = "../paginaPrincipal.html";
+});
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 const botones = document.querySelectorAll(".botonPreguntas");
 const pregunta1 = document.querySelector("#pregunta1");
 const pregunta2 = document.querySelector("#pregunta2");
@@ -11,8 +27,10 @@ botones.forEach((boton) => {
   boton.addEventListener("click", () => {
     if (boton.classList.contains("correcto")) {
       mostrarRespuestaCorrecta();
+      aumentarAcierto();
     } else {
       mostrarRespuestaIncorrecta();
+      aumentarFallo();
     }
     preguntaActual++;
     setTimeout(() => {

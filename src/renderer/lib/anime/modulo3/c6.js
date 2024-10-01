@@ -4,6 +4,22 @@ const partesEsfera = document.querySelector("#partesEsfera");
 const calculosEsfera = document.querySelector("#calculosEsfera");
 const preguntaEsfera = document.querySelector("#preguntaEsfera");
 
+const { ipcRenderer } = require("electron");
+
+ipcRenderer.on("salir-leccion", () => {
+  window.location.href = "../paginaPrincipal.html";
+});
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 function translate1000(container) {
   container.style.transform = "translateX(-1700px)";
   container.style.opacity = 0;
@@ -96,8 +112,10 @@ btnEsfera.addEventListener("click", () => {
 
   if (respuesta == resultado) {
     mostrarRespuestaCorrecta();
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
   setTimeout(function () {
     window.location.replace("../lecciones/modulo3Lecciones.html");
