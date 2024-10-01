@@ -21,7 +21,11 @@ botones.forEach((boton) => {
   boton.addEventListener("click", (e) => {
     e.preventDefault();
     let id = boton.id;
-    moverContenedor(id);
+    if (id > 0) {
+      moverContenedor(id);
+    } else {
+      moverContenedorAtras(id);
+    }
   });
 });
 
@@ -53,10 +57,43 @@ function moverContenedor(id) {
   }
 }
 
+function moverContenedorAtras(id) {
+  switch (id) {
+    case "-1":
+      avanzar(defineTrapecio);
+      quitar2(trapecioRectangulo);
+      break;
+    case "-2":
+      avanzar(trapecioRectangulo);
+      quitar2(trapecioIsosceles);
+      break;
+    case "-3":
+      avanzar(trapecioIsosceles);
+      quitar2(trapecioEscaleno);
+      break;
+    case "-4":
+      avanzar(trapecioEscaleno);
+      quitar2(calculoAreaTrapecio);
+      break;
+    case "-5":
+      avanzar(calculoAreaTrapecio);
+      quitar2(calculoAreaPerimetro);
+      break;
+  }
+}
+
 function quitar(container) {
   anime({
     targets: container,
     translateX: -1700,
+    duration: 200,
+    easing: "linear",
+  });
+}
+function quitar2(container) {
+  anime({
+    targets: container,
+    translateX: 1700,
     duration: 200,
     easing: "linear",
   });
