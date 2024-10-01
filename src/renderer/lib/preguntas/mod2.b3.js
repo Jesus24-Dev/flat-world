@@ -11,13 +11,13 @@ botones.forEach((boton) => {
   boton.addEventListener("click", () => {
     if (boton.classList.contains("correcto")) {
       mostrarRespuestaCorrecta();
-      preguntaActual++;
-      setTimeout(() => {
-        actualizarPantalla();
-      }, 500);
     } else {
       mostrarRespuestaIncorrecta();
     }
+    preguntaActual++;
+    setTimeout(() => {
+      actualizarPantalla();
+    }, 500);
   });
 });
 
@@ -31,7 +31,9 @@ function actualizarPantalla() {
   } else if (preguntaActual == 5) {
     pregunta4.style.display = "none";
   } else if (preguntaActual == 6) {
-    window.location.href = "../lecciones/modulo2Lecciones.html";
+    setTimeout(() => {
+      window.location.href = "../lecciones/modulo2Lecciones.html";
+    }, 1000);
   }
 }
 

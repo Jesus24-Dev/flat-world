@@ -14,10 +14,10 @@ btnPerimetroTrapecio.addEventListener("click", () => {
 
   if (respuesta == respuesta1) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(perimetroTrapecio);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(perimetroTrapecio);
 });
 
 const areaTrapecio = document.querySelector("#areaTrapecio");
@@ -35,12 +35,12 @@ btnAreaTrapecio.addEventListener("click", () => {
   window.location.href = "../lecciones/modulo2Lecciones.html";
   if (respuesta == respuesta2) {
     mostrarRespuestaCorrecta();
-    setTimeout(() => {
-      window.location.href = "../lecciones/modulo2Lecciones.html";
-    }, 1000);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  setTimeout(() => {
+    window.location.href = "../lecciones/modulo2Lecciones.html";
+  }, 2000);
 });
 
 function comprobarVacio(input) {

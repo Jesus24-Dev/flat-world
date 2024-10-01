@@ -39,10 +39,10 @@ btnPerimetroTriangulo1.addEventListener("click", () => {
 
   if (respuesta == respuesta1) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(perimetroTriangulo1);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(perimetroTriangulo1);
 });
 
 btnPerimetroTriangulo2.addEventListener("click", () => {
@@ -53,10 +53,10 @@ btnPerimetroTriangulo2.addEventListener("click", () => {
 
   if (respuesta == respuesta2) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(perimetroTriangulo2);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(perimetroTriangulo2);
 });
 
 btnAreaTriangulo.addEventListener("click", () => {
@@ -67,10 +67,10 @@ btnAreaTriangulo.addEventListener("click", () => {
 
   if (respuesta == respuesta3) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(areaTriangulo);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(areaTriangulo);
 });
 
 btnCuadradoPerimetro.addEventListener("click", () => {
@@ -81,10 +81,10 @@ btnCuadradoPerimetro.addEventListener("click", () => {
 
   if (respuesta == respuesta4) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(cuadradoPerimetro);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(cuadradoPerimetro);
 });
 
 const rectanguloPerimetro = document.querySelector("#rectanguloPerimetro");
@@ -105,9 +105,9 @@ btnRectanguloPerimetro.addEventListener("click", () => {
 
   if (respuesta == respuesta5) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(rectanguloPerimetro);
   } else {
     mostrarRespuestaIncorrecta();
+    avanzarPregunta(rectanguloPerimetro);
   }
 });
 
@@ -125,10 +125,10 @@ btnCuadradoArea.addEventListener("click", () => {
 
   if (respuesta == respuesta6) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(cuadradoArea);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(cuadradoArea);
 });
 
 const rectanguloArea = document.querySelector("#rectanguloArea");
@@ -147,10 +147,12 @@ btnRectanguloArea.addEventListener("click", () => {
 
   if (respuesta == respuesta7) {
     mostrarRespuestaCorrecta();
-    window.location.href = "../lecciones/modulo1Lecciones.html";
   } else {
     mostrarRespuestaIncorrecta();
   }
+  setTimeout(function () {
+    window.location.href = "../lecciones/modulo1Lecciones.html";
+  }, 2000);
 });
 
 function comprobarVacio(input) {
