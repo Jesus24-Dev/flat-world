@@ -30,11 +30,11 @@ function createLoadingWindow() {
 async function createWindow() {
   win = new BrowserWindow({
     alwaysOnTop: true,
-    // resizable: false,
+    resizable: false,
     alwaysOnTop: true,
     title: "Flat World",
     icon: "./src/assets/images/logo.png",
-    // fullscreen: true,
+    fullscreen: true,
     show: false,
     webPreferences: {
       nodeIntegration: true,
@@ -57,11 +57,11 @@ async function createWindow() {
     win = null;
   });
 
-  // ipcMain.on("login-exitoso", () => {
-  //   menuTemplate[0].submenu[1].enabled = true;
-  //   const menu = Menu.buildFromTemplate(menuTemplate);
-  //   Menu.setApplicationMenu(menu);
-  // });
+  ipcMain.on("login-exitoso", () => {
+    menuTemplate[0].submenu[1].enabled = true;
+    const menu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(menu);
+  });
 }
 
 function createMenu() {
@@ -110,7 +110,7 @@ function createMenu() {
 
 app.whenReady().then(() => {
   createLoadingWindow();
-  // createMenu();
+  createMenu();
   createWindow();
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
