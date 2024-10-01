@@ -25,7 +25,11 @@ botones.forEach((boton) => {
   boton.addEventListener("click", (e) => {
     e.preventDefault();
     let id = boton.id;
-    moverContenedor(id);
+    if (id > 0) {
+      moverContenedor(id);
+    } else {
+      moverContenedorAtras(id);
+    }
   });
 });
 
@@ -53,10 +57,40 @@ function moverContenedor(id) {
   }
 }
 
+function moverContenedorAtras(id) {
+  switch (id) {
+    case "-1":
+      avanzar(introduccion);
+      quitar2(defineTriangulo);
+      break;
+    case "-2":
+      avanzar(defineTriangulo);
+      quitar2(defineTrianguloPorLados);
+      break;
+    case "-3":
+      avanzar(defineTrianguloPorLados);
+      quitar2(defineTrianguloPorAngulos);
+      break;
+    case "-4":
+      avanzar(defineTrianguloPorAngulos);
+      quitar2(areaPerimetro);
+      break;
+  }
+}
+
 function quitar(container) {
   anime({
     targets: container,
     translateX: -1700,
+    duration: 200,
+    easing: "linear",
+  });
+}
+
+function quitar2(container) {
+  anime({
+    targets: container,
+    translateX: 1700,
     duration: 200,
     easing: "linear",
   });
