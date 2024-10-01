@@ -30,10 +30,11 @@ function createLoadingWindow() {
 async function createWindow() {
   win = new BrowserWindow({
     alwaysOnTop: true,
-    resizable: false,
+    // resizable: false,
+    alwaysOnTop: true,
     title: "Flat World",
     icon: "./src/assets/images/logo.png",
-    fullscreen: true,
+    // fullscreen: true,
     show: false,
     webPreferences: {
       nodeIntegration: true,
@@ -56,11 +57,11 @@ async function createWindow() {
     win = null;
   });
 
-  ipcMain.on("login-exitoso", () => {
-    menuTemplate[0].submenu[1].enabled = true;
-    const menu = Menu.buildFromTemplate(menuTemplate);
-    Menu.setApplicationMenu(menu);
-  });
+  // ipcMain.on("login-exitoso", () => {
+  //   menuTemplate[0].submenu[1].enabled = true;
+  //   const menu = Menu.buildFromTemplate(menuTemplate);
+  //   Menu.setApplicationMenu(menu);
+  // });
 }
 
 function createMenu() {
@@ -109,7 +110,7 @@ function createMenu() {
 
 app.whenReady().then(() => {
   createLoadingWindow();
-  createMenu();
+  // createMenu();
   createWindow();
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
@@ -145,6 +146,11 @@ app.whenReady().then(() => {
     const fechaActual = obtenerFechaActual();
     await Perfil.aumentarAciertos(cedula, fechaActual);
   });
+
+  ipcMain.handle("obtener-resultados", async (event, cedula) => {
+    const resultados = await Perfil.obtenerResultados(cedula);
+    return resultados;
+  });
 });
 
 app.on("window-all-closed", () => {
@@ -157,7 +163,7 @@ function obtenerFechaActual() {
   const mes = fechaActual.getMonth() + 1;
   const anio = fechaActual.getFullYear();
 
-  const fechaCompleta = `${dia}-${mes}-${anio}`;
+  const fechaCompleta = `${dia + 2}-${mes}-${anio}`;
 
   return fechaCompleta;
 }

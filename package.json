@@ -20,9 +20,9 @@
   "homepage": "https://github.com/Jesus24-Dev/flat-world#readme",
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^6.0.0",
-    "alpinejs": "^3.14.1",
     "animejs": "^3.2.2",
     "autoprefixer": "^10.4.20",
+    "chart.js": "^4.4.4",
     "ejs": "^3.1.10",
     "konva": "^9.3.14",
     "postcss": "^8.4.41",

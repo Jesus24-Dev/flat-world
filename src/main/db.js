@@ -114,6 +114,31 @@ class Perfil {
       console.error("Error al verificar o actualizar el resultado:", error);
     }
   }
+
+  static async obtenerResultados(cedula) {
+    try {
+      const resultados = await Resultados.findAll({
+        where: {
+          cedula,
+        },
+      });
+      if (resultados.length === 0) {
+        return {
+          mensaje: `No se encontraron resultados para la cédula ${cedula}`,
+        };
+      } else {
+        const resultadosJSON = resultados.map((resultado) => ({
+          fecha: resultado.fecha,
+          aciertos: resultado.aciertos,
+          fallos: resultado.fallos,
+        }));
+        return { cedula, resultados: resultadosJSON };
+      }
+    } catch (error) {
+      console.error("Error al obtener los resultados:", error);
+      return { error: "Error al obtener los resultados" };
+    }
+  }
 }
 
 module.exports = Perfil;
