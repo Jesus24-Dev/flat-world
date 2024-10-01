@@ -12,10 +12,10 @@ btnEjercicio1.addEventListener("click", () => {
 
   if (respuesta == resultado1) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(ejercicio1);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(ejercicio1);
 });
 
 const ejercicio2 = document.querySelector("#ejercicio2");
@@ -32,10 +32,10 @@ btnEjercicio2.addEventListener("click", () => {
 
   if (respuesta == resultado2) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(ejercicio2);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(ejercicio2);
 });
 
 const Ejercicio3 = document.querySelector("#Ejercicio3");
@@ -52,10 +52,10 @@ btnEjercicio3.addEventListener("click", () => {
 
   if (respuesta == resultado3) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(Ejercicio3);
   } else {
     mostrarRespuestaIncorrecta();
   }
+  avanzarPregunta(Ejercicio3);
 });
 
 const Ejercicio4 = document.querySelector("#Ejercicio4");
@@ -72,10 +72,12 @@ btnEjercicio4.addEventListener("click", () => {
 
   if (respuesta == resultado4) {
     mostrarRespuestaCorrecta();
-    window.location.href = "../lecciones/modulo4Lecciones.html";
   } else {
     mostrarRespuestaIncorrecta();
   }
+  setTimeout(() => {
+    window.location.href = "../lecciones/modulo4Lecciones.html";
+  }, 1000);
 });
 
 function avanzarPregunta(container) {
