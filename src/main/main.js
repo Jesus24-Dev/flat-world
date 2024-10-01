@@ -163,7 +163,7 @@ function obtenerFechaActual() {
   const mes = fechaActual.getMonth() + 1;
   const anio = fechaActual.getFullYear();
 
-  const fechaCompleta = `${dia + 2}-${mes}-${anio}`;
+  const fechaCompleta = `${dia}-${mes}-${anio}`;
 
   return fechaCompleta;
 }
