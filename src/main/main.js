@@ -31,6 +31,7 @@ async function createWindow() {
   win = new BrowserWindow({
     alwaysOnTop: true,
     resizable: false,
+    alwaysOnTop: true,
     title: "Flat World",
     icon: "./src/assets/images/logo.png",
     fullscreen: true,
@@ -66,7 +67,7 @@ async function createWindow() {
 function createMenu() {
   menuTemplate = [
     {
-      label: "Opciones",
+      label: "Salir",
       submenu: [
         {
           label: "Salir de aplicación",
@@ -135,8 +136,34 @@ app.whenReady().then(() => {
       return err;
     }
   });
+
+  ipcMain.on("aumentarFallos", async (event, cedula) => {
+    const fechaActual = obtenerFechaActual();
+    await Perfil.aumentarFallos(cedula, fechaActual);
+  });
+
+  ipcMain.on("aumentarAciertos", async (event, cedula) => {
+    const fechaActual = obtenerFechaActual();
+    await Perfil.aumentarAciertos(cedula, fechaActual);
+  });
+
+  ipcMain.handle("obtener-resultados", async (event, cedula) => {
+    const resultados = await Perfil.obtenerResultados(cedula);
+    return resultados;
+  });
 });
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
+
+function obtenerFechaActual() {
+  const fechaActual = new Date();
+  const dia = fechaActual.getDate();
+  const mes = fechaActual.getMonth() + 1;
+  const anio = fechaActual.getFullYear();
+
+  const fechaCompleta = `${dia}-${mes}-${anio}`;
+
+  return fechaCompleta;
+}

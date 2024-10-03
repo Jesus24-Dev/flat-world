@@ -13,6 +13,52 @@
     <script src="../services/three.js"></script>
   </head>
   <body class="overflow-hidden">
+    <div
+      class="hidden grid-cols-12 grid-rows-12 h-screen w-full p-4 absolute bg-black/75 z-50"
+      id="resultados"
+    >
+      <div
+        class="h-full w-full bg-white shadow-lg shadow-white flex flex-col rounded-xl"
+      >
+        <div
+          class="w-full h-1/3 shadow-md shadow-gray-500 flex items-center flex-col justify-around"
+        >
+          <h1 class="text-5xl font-Ubuntu font-semibold text-primary-950">
+            RESULTADOS
+          </h1>
+          <h2
+            id="estudianteNombreResultados"
+            class="text-3xl font-Ubunto font-normal text-secondary-400"
+          ></h2>
+        </div>
+        <div
+          class="w-full h-full flex justify-between px-12 items-center shadow-md shadow-gray-500"
+        >
+          <div class="flex flex-col justify-center h-full gap-8">
+            <h3 class="text-4xl text-green-600 font-Ubuntu font-semibold">
+              Aciertos: <span id="numeroAciertos">0</span>
+            </h3>
+            <h3 class="text-4xl text-red-600 font-Ubuntu font-semibold">
+              Fallos: <span id="numeroFallos">0</span>
+            </h3>
+          </div>
+          <div class="h-96 w-2/3">
+            <canvas id="myChart" width="100" height="50"></canvas>
+          </div>
+        </div>
+        <div
+          class="w-full h-1/5 shadow-md shadow-gray-500 flex justify-center items-end"
+        >
+          <a
+            href="#"
+            id="cerrarResultados"
+            class="p-4 text-center font-bold text-secondary-400 hover:text-secondary-500 text-lg font-Poppins"
+            >Cerrar</a
+          >
+        </div>
+      </div>
+    </div>
+
     <div class="grid grid-cols-12 grid-rows-12 h-screen p-4 bg-principal">
       <div class="col-start-11 row-start-3 col-span-2">
         <h1 class="text-6xl font-Ubuntu font-bold text-primary-950">
@@ -45,6 +91,12 @@
         >
           Sección <span id="seccionUsuario"></span>
         </p>
+        <a
+          href="#"
+          id="verResultados"
+          class="text-center font-bold text-secondary-400 hover:text-secondary-500 text-lg font-Poppins"
+          >Ver resultados</a
+        >
       </aside>
       <div class="card card-yellow" id="carta1">
         <img src="../assets/images/modulo1-card.jpg" alt="" class="card-img" />
@@ -151,12 +203,110 @@
     <script src="../renderer/lib/anime/principal.js"></script>
 
     <script>
+      const { ipcRenderer } = require("electron");
+
+      const { Chart, registerables } = require("chart.js");
+      Chart.register(...registerables);
+
       const nombreUsuario = document.querySelector("#nombreUsuario");
       const seccionUsuario = document.querySelector("#seccionUsuario");
       const datosEstudiante = sessionStorage.getItem("datos");
       const datosJson = JSON.parse(datosEstudiante);
       nombreUsuario.innerHTML = `${datosJson.nombre} ${datosJson.apellido}`;
       seccionUsuario.innerHTML = datosJson.seccion;
+
+      const resultados = document.querySelector("#resultados");
+      const verResultados = document.querySelector("#verResultados");
+      const cerrarResultados = document.querySelector("#cerrarResultados");
+      const tablaResultados = document.querySelector("#tablaResultados");
+      const estudianteNombreResultados = document.querySelector(
+        "#estudianteNombreResultados"
+      );
+      estudianteNombreResultados.innerHTML = `${datosJson.nombre} ${datosJson.apellido}`;
+
+      const numeroFallos = document.querySelector("#numeroFallos");
+      const numeroAciertos = document.querySelector("#numeroAciertos");
+
+      verResultados.addEventListener("click", (e) => {
+        resultados.classList.remove("hidden");
+        const cedula = sessionStorage.getItem("cedula");
+        console.log(cedula);
+        ipcRenderer
+          .invoke("obtener-resultados", cedula)
+          .then((resultados) => {
+            if (resultados.resultados && resultados.resultados.length > 0) {
+              const fechas = resultados.resultados.map(
+                (resultado) => resultado.fecha
+              );
+              const aciertos = resultados.resultados.map(
+                (resultado) => resultado.aciertos
+              );
+              const fallos = resultados.resultados.map(
+                (resultado) => resultado.fallos
+              );
+              generarGrafica(fechas, aciertos, fallos);
+              numeroAciertos.innerHTML = aciertos.reduce((a, b) => a + b);
+              numeroFallos.innerHTML = fallos.reduce((a, b) => a + b);
+            } else {
+              console.error(
+                "No se encontraron resultados para la cédula proporcionada"
+              );
+            }
+          })
+          .catch((error) => {
+            console.error("Error al obtener los resultados:", error);
+          });
+      });
+
+      cerrarResultados.addEventListener("click", (e) => {
+        resultados.classList.add("hidden");
+      });
+
+      function generarGrafica(fechas, aciertos, fallos) {
+        const ctx = document.getElementById("myChart").getContext("2d");
+
+        const myChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: fechas,
+            datasets: [
+              {
+                label: "Aciertos",
+                data: aciertos,
+                borderColor: "rgba(75, 192, 192, 1)",
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                fill: true,
+                tension: 0.1,
+              },
+              {
+                label: "Fallos",
+                data: fallos,
+                borderColor: "rgba(255, 99, 132, 1)",
+                backgroundColor: "rgba(255, 99, 132, 0.2)",
+                fill: true,
+                tension: 0.1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "Fecha",
+                },
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: "Cantidad",
+                },
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      }
     </script>
   </body>
 </html>

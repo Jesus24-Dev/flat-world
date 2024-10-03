@@ -1,3 +1,19 @@
+const { ipcRenderer } = require("electron");
+
+ipcRenderer.on("salir-leccion", () => {
+  window.location.href = "../paginaPrincipal.html";
+});
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 const ejercicio1 = document.querySelector("#ejercicio1");
 const respuestaEjercicio1 = document.querySelector("#respuestaEjercicio1");
 const btnEjercicio1 = document.querySelector("#btnEjercicio1");
@@ -12,10 +28,12 @@ btnEjercicio1.addEventListener("click", () => {
 
   if (respuesta == resultado1) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(ejercicio1);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(ejercicio1);
 });
 
 const ejercicio2 = document.querySelector("#ejercicio2");
@@ -32,10 +50,12 @@ btnEjercicio2.addEventListener("click", () => {
 
   if (respuesta == resultado2) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(ejercicio2);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(ejercicio2);
 });
 
 const Ejercicio3 = document.querySelector("#Ejercicio3");
@@ -52,10 +72,12 @@ btnEjercicio3.addEventListener("click", () => {
 
   if (respuesta == resultado3) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(Ejercicio3);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(Ejercicio3);
 });
 
 const Ejercicio4 = document.querySelector("#Ejercicio4");
@@ -72,10 +94,14 @@ btnEjercicio4.addEventListener("click", () => {
 
   if (respuesta == resultado4) {
     mostrarRespuestaCorrecta();
-    window.location.href = "../lecciones/modulo4Lecciones.html";
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  setTimeout(() => {
+    window.location.href = "../lecciones/modulo4Lecciones.html";
+  }, 1000);
 });
 
 function avanzarPregunta(container) {

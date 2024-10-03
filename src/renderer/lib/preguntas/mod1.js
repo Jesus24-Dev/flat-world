@@ -1,3 +1,19 @@
+const { ipcRenderer } = require("electron");
+
+ipcRenderer.on("salir-leccion", () => {
+  window.location.href = "../paginaPrincipal.html";
+});
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 const perimetroTriangulo1 = document.querySelector("#perimetroTriangulo1");
 const respuestaPerimetroTriangulo1 = document.querySelector(
   "#respuestaPerimetroTriangulo1"
@@ -39,10 +55,12 @@ btnPerimetroTriangulo1.addEventListener("click", () => {
 
   if (respuesta == respuesta1) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(perimetroTriangulo1);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(perimetroTriangulo1);
 });
 
 btnPerimetroTriangulo2.addEventListener("click", () => {
@@ -53,10 +71,12 @@ btnPerimetroTriangulo2.addEventListener("click", () => {
 
   if (respuesta == respuesta2) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(perimetroTriangulo2);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(perimetroTriangulo2);
 });
 
 btnAreaTriangulo.addEventListener("click", () => {
@@ -67,10 +87,12 @@ btnAreaTriangulo.addEventListener("click", () => {
 
   if (respuesta == respuesta3) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(areaTriangulo);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(areaTriangulo);
 });
 
 btnCuadradoPerimetro.addEventListener("click", () => {
@@ -81,10 +103,12 @@ btnCuadradoPerimetro.addEventListener("click", () => {
 
   if (respuesta == respuesta4) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(cuadradoPerimetro);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(cuadradoPerimetro);
 });
 
 const rectanguloPerimetro = document.querySelector("#rectanguloPerimetro");
@@ -105,10 +129,12 @@ btnRectanguloPerimetro.addEventListener("click", () => {
 
   if (respuesta == respuesta5) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(rectanguloPerimetro);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(rectanguloPerimetro);
 });
 
 const cuadradoArea = document.querySelector("#cuadradoArea");
@@ -125,10 +151,12 @@ btnCuadradoArea.addEventListener("click", () => {
 
   if (respuesta == respuesta6) {
     mostrarRespuestaCorrecta();
-    avanzarPregunta(cuadradoArea);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  avanzarPregunta(cuadradoArea);
 });
 
 const rectanguloArea = document.querySelector("#rectanguloArea");
@@ -147,10 +175,14 @@ btnRectanguloArea.addEventListener("click", () => {
 
   if (respuesta == respuesta7) {
     mostrarRespuestaCorrecta();
-    window.location.href = "../lecciones/modulo1Lecciones.html";
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  setTimeout(function () {
+    window.location.href = "../lecciones/modulo1Lecciones.html";
+  }, 2000);
 });
 
 function comprobarVacio(input) {

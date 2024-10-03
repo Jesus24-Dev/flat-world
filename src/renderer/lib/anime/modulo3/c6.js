@@ -4,6 +4,22 @@ const partesEsfera = document.querySelector("#partesEsfera");
 const calculosEsfera = document.querySelector("#calculosEsfera");
 const preguntaEsfera = document.querySelector("#preguntaEsfera");
 
+const { ipcRenderer } = require("electron");
+
+ipcRenderer.on("salir-leccion", () => {
+  window.location.href = "../paginaPrincipal.html";
+});
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 function translate1000(container) {
   container.style.transform = "translateX(-1700px)";
   container.style.opacity = 0;
@@ -17,7 +33,11 @@ botones.forEach((boton) => {
   boton.addEventListener("click", (e) => {
     e.preventDefault();
     let id = boton.id;
-    moverContenedor(id);
+    if (id > 0) {
+      moverContenedor(id);
+    } else {
+      moverContenedorAtras(id);
+    }
   });
 });
 
@@ -37,11 +57,31 @@ function moverContenedor(id) {
       break;
   }
 }
+function moverContenedorAtras(id) {
+  switch (id) {
+    case "-1":
+      avanzar(defineEsfera);
+      quitar2(partesEsfera);
+      break;
+    case "-2":
+      avanzar(partesEsfera);
+      quitar2(calculosEsfera);
+      break;
+  }
+}
 
 function quitar(container) {
   anime({
     targets: container,
     translateX: -1700,
+    duration: 200,
+    easing: "linear",
+  });
+}
+function quitar2(container) {
+  anime({
+    targets: container,
+    translateX: 1700,
     duration: 200,
     easing: "linear",
   });
@@ -72,12 +112,14 @@ btnEsfera.addEventListener("click", () => {
 
   if (respuesta == resultado) {
     mostrarRespuestaCorrecta();
-    setTimeout(function () {
-      window.location.replace("../lecciones/modulo3Lecciones.html");
-    }, 2000);
+    aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    aumentarFallo();
   }
+  setTimeout(function () {
+    window.location.replace("../lecciones/modulo3Lecciones.html");
+  }, 1000);
 });
 
 const respuestaCorrecta = document.querySelector("#respuestaCorrecta");

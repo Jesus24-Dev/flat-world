@@ -1,3 +1,19 @@
+const { ipcRenderer } = require("electron");
+
+ipcRenderer.on("salir-leccion", () => {
+  window.location.href = "../paginaPrincipal.html";
+});
+
+function aumentarFallo() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarFallos", cedula);
+}
+
+function aumentarAcierto() {
+  const cedula = sessionStorage.getItem("cedula");
+  ipcRenderer.send("aumentarAciertos", cedula);
+}
+
 const botones = document.querySelectorAll(".botonPreguntas");
 const pregunta1 = document.querySelector("#pregunta1");
 const pregunta2 = document.querySelector("#pregunta2");
@@ -11,13 +27,15 @@ botones.forEach((boton) => {
   boton.addEventListener("click", () => {
     if (boton.classList.contains("correcto")) {
       mostrarRespuestaCorrecta();
-      preguntaActual++;
-      setTimeout(() => {
-        actualizarPantalla();
-      }, 500);
+      aumentarAcierto();
     } else {
       mostrarRespuestaIncorrecta();
+      aumentarFallo();
     }
+    preguntaActual++;
+    setTimeout(() => {
+      actualizarPantalla();
+    }, 500);
   });
 });
 
@@ -31,7 +49,9 @@ function actualizarPantalla() {
   } else if (preguntaActual == 5) {
     pregunta4.style.display = "none";
   } else if (preguntaActual == 6) {
-    window.location.href = "../lecciones/modulo2Lecciones.html";
+    setTimeout(() => {
+      window.location.href = "../lecciones/modulo2Lecciones.html";
+    }, 1000);
   }
 }
 

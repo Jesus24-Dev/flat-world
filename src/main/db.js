@@ -1,5 +1,5 @@
 const sequelize = require("../db/migrations/migrations");
-const { Estudiante, Seccion } = require("../db/models/index");
+const { Estudiante, Seccion, Resultados } = require("../db/models/index");
 
 class Perfil {
   static async crearConexion() {
@@ -8,10 +8,9 @@ class Perfil {
   }
 
   static async llenarDatos() {
-    const count = await Seccion.count(); // Cuenta los registros en la tabla
+    const count = await Seccion.count();
 
     if (count === 0) {
-      // Si no hay registros, poblar la tabla
       await Seccion.bulkCreate([
         { nombre: "A" },
         { nombre: "B" },
@@ -54,6 +53,91 @@ class Perfil {
       apellido: nombreEstudiante.apellido,
       seccion: seccion.nombre,
     };
+  }
+
+  static async aumentarFallos(cedula, fecha) {
+    try {
+      const resultadoExistente = await Resultados.findOne({
+        where: {
+          cedula,
+          fecha,
+        },
+      });
+
+      if (resultadoExistente) {
+        await resultadoExistente.increment("fallos", { by: 1 });
+        console.log(
+          `Fallos incrementado en 1. Nuevos fallos: ${
+            resultadoExistente.fallos + 1
+          }`
+        );
+      } else {
+        await Resultados.create({
+          cedula,
+          fecha,
+          aciertos: 0,
+          fallos: 1,
+        });
+        console.log("Nuevo fallo creado.");
+      }
+    } catch (error) {
+      console.error("Error al verificar o actualizar el resultado:", error);
+    }
+  }
+
+  static async aumentarAciertos(cedula, fecha) {
+    try {
+      const resultadoExistente = await Resultados.findOne({
+        where: {
+          cedula,
+          fecha,
+        },
+      });
+
+      if (resultadoExistente) {
+        await resultadoExistente.increment("aciertos", { by: 1 });
+        console.log(
+          `Fallos incrementado en 1. Nuevos aciertos: ${
+            resultadoExistente.aciertos + 1
+          }`
+        );
+      } else {
+        await Resultados.create({
+          cedula,
+          fecha,
+          aciertos: 1,
+          fallos: 0,
+        });
+        console.log("Nuevo acierto creado.");
+      }
+    } catch (error) {
+      console.error("Error al verificar o actualizar el resultado:", error);
+    }
+  }
+
+  static async obtenerResultados(cedula) {
+    try {
+      const resultados = await Resultados.findAll({
+        where: {
+          cedula,
+        },
+      });
+      if (resultados.length === 0) {
+        return {
+          mensaje: `No se encontraron resultados para la cédula ${cedula}`,
+        };
+      } else {
+        const resultadosJSON = resultados.map((resultado) => ({
+          fecha: resultado.fecha,
+          aciertos: resultado.aciertos,
+          fallos: resultado.fallos,
+        }));
+        return { cedula, resultados: resultadosJSON };
+      }
+    } catch (error) {
+      console.error("Error al obtener los resultados:", error);
+      return { error: "Error al obtener los resultados" };
+    }
   }
 }
 

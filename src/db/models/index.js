@@ -1,5 +1,6 @@
 const Estudiante = require("./Estudiante");
 const Seccion = require("./Seccion");
+const Resultados = require("./Resultados");
 
 Estudiante.belongsTo(Seccion, {
   foreignKey: "seccionId",
@@ -11,4 +12,7 @@ Seccion.hasMany(Estudiante, {
   as: "estudiantes",
 });
 
-module.exports = { Estudiante, Seccion };
+Estudiante.hasMany(Resultados, { foreignKey: "cedula" });
+Resultados.belongsTo(Estudiante, { foreignKey: "cedula" });
+
+module.exports = { Estudiante, Seccion, Resultados };
