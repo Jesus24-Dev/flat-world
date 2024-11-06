@@ -82,8 +82,8 @@ let lineaAltura = paperCalculoTriangulo.path("M360 32 L360 280");
 lineaAltura.attr({ "stroke-width": 5, stroke: "red" });
 
 let a = paperCalculoTriangulo.text(200, 110, "a");
-let b = paperCalculoTriangulo.text(450, 110, "b");
-let c = paperCalculoTriangulo.text(300, 300, "c");
+let b = paperCalculoTriangulo.text(450, 110, "c");
+let c = paperCalculoTriangulo.text(300, 300, "b");
 let h = paperCalculoTriangulo.text(330, 150, "h");
 
 let setLetras = paperCalculoTriangulo.set();

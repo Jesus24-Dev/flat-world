@@ -7,7 +7,7 @@
     "start": "electron .",
     "build": "tailwindcss -i ./src/assets/styles/style.css -o ./src/assets/styles/main.css --watch",
     "dev": "vite .",
-    "pack": "electron-packager . FlatWorldApp --platform=win32 --arch=x64 --out=dist/ --overwrite  --icon=src/assets/images/icon.ico"
+    "pack": "electron-packager . FlatWorldApp --platform=win32 --arch=x64 --out=proyectoCumbres/ --overwrite  --icon=src/assets/images/icon.ico"
   },
   "repository": {
     "type": "git",

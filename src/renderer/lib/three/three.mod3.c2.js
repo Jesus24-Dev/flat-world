@@ -93,13 +93,13 @@ let vertice = paper
   .path("M700 350 750 350")
   .attr({ stroke: borde, "stroke-width": 2 });
 
-let verticeText = paper.text(800, 350, "Vertice").attr(atributosTexto);
+let verticeText = paper.text(800, 350, "Vértice").attr(atributosTexto);
 
 let apice = paper
   .path("M470 50 L400 50")
   .attr({ stroke: borde, "stroke-width": 2 });
 
-let apiceText = paper.text(340, 50, "Apice").attr(atributosTexto);
+let apiceText = paper.text(340, 50, "Ápice").attr(atributosTexto);
 
 let caraLateral = paper
   .path("M420 150 L320 150")

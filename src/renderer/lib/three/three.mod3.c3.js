@@ -1,5 +1,4 @@
 function crearCubo(contenedor) {
-  // Escena, cámara y renderizador
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(
     75,
@@ -8,19 +7,18 @@ function crearCubo(contenedor) {
     1000
   );
 
-  const renderer = new THREE.WebGLRenderer({ alpha: true }); // habilitar fondo transparente
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
   renderer.setSize(contenedor.clientWidth, contenedor.clientHeight);
   contenedor.appendChild(renderer.domElement);
 
-  // Geometría del cubo
-  const geometry = new THREE.BoxGeometry(7, 7, 7); // Cubo de 5x5x5
+  const geometry = new THREE.BoxGeometry(7, 7, 7);
   const material = new THREE.MeshBasicMaterial({
     color: 0x0000ff,
     wireframe: false,
     transparent: true,
     opacity: 0.7,
   });
-  const edges = new THREE.EdgesGeometry(geometry); // Para mostrar los bordes del cubo
+  const edges = new THREE.EdgesGeometry(geometry);
   const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
 
   const cubo = new THREE.Mesh(geometry, material);
@@ -29,14 +27,10 @@ function crearCubo(contenedor) {
   scene.add(cubo);
   scene.add(cuboEdges);
 
-  // Posicionamos la cámara
   camera.position.z = 10;
 
-  // Animación
   function animate() {
     requestAnimationFrame(animate);
-
-    // Rotamos el cubo
     cubo.rotation.x += 0.01;
     cubo.rotation.y += 0.01;
     cuboEdges.rotation.x += 0.01;
@@ -46,8 +40,6 @@ function crearCubo(contenedor) {
   }
 
   animate();
-
-  // Redimensionar al cambiar tamaño de ventana
   window.addEventListener("resize", () => {
     const width = contenedor.clientWidth;
     const height = contenedor.clientHeight;
@@ -90,7 +82,7 @@ let vertice = paper
   .path("M300 100 L250 100")
   .attr({ "stroke-width": 2, stroke: borde });
 
-let verticeText = paper.text(190, 100, "Vertice").attr(atributosTexto);
+let verticeText = paper.text(190, 100, "Vértice").attr(atributosTexto);
 
 let arista = paper
   .path("M550 200 L700 200")

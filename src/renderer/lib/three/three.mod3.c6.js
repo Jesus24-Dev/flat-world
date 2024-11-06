@@ -83,4 +83,4 @@ const lineaDiametro = paper.path("M470 100 L470 400");
 const lineaRadio = paper.path("M620 250 L470 250");
 
 let radio = paper.text(680, 250, "Radio").attr(atributosTexto);
-let diametro = paper.text(470, 430, "Diametro").attr(atributosTexto);
+let diametro = paper.text(470, 430, "Diámetro").attr(atributosTexto);

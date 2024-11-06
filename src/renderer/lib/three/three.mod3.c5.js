@@ -82,6 +82,6 @@ const lineaBase = paper
 
 const lineaAltura = paper.path("M480 75 L480 390");
 
-let perimetro = paper.text(480, 450, "Perimetro").attr(atributosTexto);
-let diametro = paper.text(480, 40, "Diametro").attr(atributosTexto);
+let perimetro = paper.text(480, 450, "Perímetro").attr(atributosTexto);
+let diametro = paper.text(480, 40, "Diámetro").attr(atributosTexto);
 let altura = paper.text(700, 250, "Altura").attr(atributosTexto);

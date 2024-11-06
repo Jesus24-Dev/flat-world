@@ -111,7 +111,7 @@ let baseInferiorTexto = paper
 let vertice = paper
   .path("M650 100 L700 100")
   .attr({ "stroke-width": 2, stroke: borde });
-let verticeTexto = paper.text(740, 100, "Vertice").attr(atributosTexto);
+let verticeTexto = paper.text(740, 100, "Vértice").attr(atributosTexto);
 
 let ejeTexto = paper
   .text(510, 225, "Eje")
