@@ -107,7 +107,7 @@ function avanzar(container) {
 const respuestaEsfera = document.querySelector("#respuestaEsfera");
 const btnEsfera = document.querySelector("#btnEsfera");
 
-const resultado = 267.94;
+const resultado = 268.08;
 
 btnEsfera.addEventListener("click", () => {
   let respuesta = respuestaEsfera.value;

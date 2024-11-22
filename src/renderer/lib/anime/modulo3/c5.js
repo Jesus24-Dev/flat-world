@@ -107,7 +107,7 @@ function avanzar(container) {
 const respuestaCilindro = document.querySelector("#respuestaCilindro");
 const btnCilindro = document.querySelector("#btnCilindro");
 
-const resultado = 339.12;
+const resultado = 339.29;
 
 btnCilindro.addEventListener("click", () => {
   let respuesta = respuestaCilindro.value;
