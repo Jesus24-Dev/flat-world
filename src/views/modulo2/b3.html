@@ -21,6 +21,9 @@
         class="row-start-4 col-start-4 row-span-6 col-span-6 bg-white shadow-lg shadow-white flex flex-col justify-center items-center rounded-xl gap-16"
       >
         <h1 class="text-6xl text-red-500">Respuesta incorrecta</h1>
+        <h2 class="text-3xl text-red-500 text-center">
+          Respuesta correcta: <span id="feedbackIncorrecto"></span>
+        </h2>
       </div>
     </div>
     <div
@@ -51,15 +54,24 @@
           <button class="botonPreguntas correcto">
             Si, haciendo todos los ángulos rectos
           </button>
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="Si, haciendo todos los ángulos rectos"
+          >
             No, porque sus lados no son iguales.
           </button>
         </aside>
         <aside class="w-full flex justify-center content-center items-center">
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="Si, haciendo todos los ángulos rectos"
+          >
             No, un rombo nunca puede tener ángulos rectos.
           </button>
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="Si, haciendo todos los ángulos rectos"
+          >
             Sí, si tiene dos lados opuestos paralelos.
           </button>
         </aside>
@@ -80,7 +92,10 @@
         class="col-start-2 row-start-7 row-span-4 col-span-10 flex flex-col justify-center items-center"
       >
         <aside class="w-full flex justify-center content-center items-center">
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="Sí, sus lados son paralelos."
+          >
             No, porque sus ángulos no son rectos.
           </button>
           <button class="botonPreguntas correcto">
@@ -88,10 +103,16 @@
           </button>
         </aside>
         <aside class="w-full flex justify-center content-center items-center">
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="Sí, sus lados son paralelos."
+          >
             No, porque los paralelogramos no tienen lados iguales.
           </button>
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="Sí, sus lados son paralelos."
+          >
             Sí, si tienen ángulos iguales en todos sus vértices.
           </button>
         </aside>
@@ -112,15 +133,24 @@
         class="col-start-2 row-start-7 row-span-4 col-span-10 flex flex-col justify-center items-center"
       >
         <aside class="w-full flex justify-center content-center items-center">
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="No, porque tiene dos lados no paralelos."
+          >
             No, porque todos sus lados deben ser paralelos.
           </button>
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="No, porque tiene dos lados no paralelos."
+          >
             Sí, porque sus ángulos son iguales.
           </button>
         </aside>
         <aside class="w-full flex justify-center content-center items-center">
-          <button class="botonPreguntas">
+          <button
+            class="botonPreguntas"
+            aria-valuetext="No, porque tiene dos lados no paralelos."
+          >
             Sí, si sus lados opuestos son iguales.
           </button>
           <button class="botonPreguntas correcto">
@@ -145,16 +175,18 @@
         class="col-start-2 row-start-7 row-span-4 col-span-10 flex flex-col justify-center items-center"
       >
         <aside class="w-full flex justify-center content-center items-center">
-          <button class="botonPreguntas">
+          <button class="botonPreguntas" aria-valuetext="El cuadrado.">
             El rectángulo, porque tiene mayor altura.
           </button>
-          <button class="botonPreguntas">
+          <button class="botonPreguntas" aria-valuetext="El cuadrado.">
             El rectángulo, porque tiene mayor base.
           </button>
         </aside>
         <aside class="w-full flex justify-center content-center items-center">
           <button class="botonPreguntas correcto">El cuadrado.</button>
-          <button class="botonPreguntas">Ambos tienen la misma área.</button>
+          <button class="botonPreguntas" aria-valuetext="El cuadrado.">
+            Ambos tienen la misma área.
+          </button>
         </aside>
       </article>
     </section>
@@ -175,11 +207,11 @@
       >
         <aside class="w-full flex justify-center content-center items-center">
           <button class="botonPreguntas correcto">16 cm</button>
-          <button class="botonPreguntas">12 cm</button>
+          <button class="botonPreguntas" aria-valuetext="16 cm">12 cm</button>
         </aside>
         <aside class="w-full flex justify-center content-center items-center">
-          <button class="botonPreguntas">10 cm</button>
-          <button class="botonPreguntas">8 cm</button>
+          <button class="botonPreguntas" aria-valuetext="16 cm">10 cm</button>
+          <button class="botonPreguntas" aria-valuetext="16 cm">8 cm</button>
         </aside>
       </article>
     </section>

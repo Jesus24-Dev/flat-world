@@ -1,5 +1,11 @@
 const { ipcRenderer } = require("electron");
 
+const feedback = document.querySelector("#feedbackIncorrecto");
+
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
+
 ipcRenderer.on("salir-leccion", () => {
   window.location.href = "../paginaPrincipal.html";
 });
@@ -29,13 +35,15 @@ botones.forEach((boton) => {
       mostrarRespuestaCorrecta();
       aumentarAcierto();
     } else {
+      const msg = boton.ariaValueText;
+      mostrarFeedback(msg);
       mostrarRespuestaIncorrecta();
       aumentarFallo();
     }
     preguntaActual++;
     setTimeout(() => {
       actualizarPantalla();
-    }, 500);
+    }, 1000);
   });
 });
 
