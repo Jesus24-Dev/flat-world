@@ -62,7 +62,7 @@ btnPerimetroTriangulo1.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
-    mostrarFeedback("Repasa la lección Triángulo");
+    mostrarFeedback(respuesta1);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -79,7 +79,7 @@ btnPerimetroTriangulo2.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
-    mostrarFeedback("Repasa la lección Triángulo");
+    mostrarFeedback(respuesta2);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -97,7 +97,7 @@ btnAreaTriangulo.addEventListener("click", () => {
     aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
-    mostrarFeedback("Repasa la lección Triángulo");
+    mostrarFeedback(respuesta3);
     aumentarFallo();
   }
   avanzarPregunta(areaTriangulo);
@@ -113,7 +113,7 @@ btnCuadradoPerimetro.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
-    mostrarFeedback("Repasa la lección Cuadrilatero");
+    mostrarFeedback(respuesta4);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -140,7 +140,7 @@ btnRectanguloPerimetro.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
-    mostrarFeedback("Repasa la lección Cuadrilatero");
+    mostrarFeedback(respuesta5);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -163,7 +163,7 @@ btnCuadradoArea.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
-    mostrarFeedback("Repasa la lección Cuadrilatero");
+    mostrarFeedback(respuesta6);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -188,7 +188,7 @@ btnRectanguloArea.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
-    mostrarFeedback("Repasa la lección Cuadrilatero");
+    mostrarFeedback(respuesta7);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
