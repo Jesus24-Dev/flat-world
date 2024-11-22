@@ -66,11 +66,6 @@ class Perfil {
 
       if (resultadoExistente) {
         await resultadoExistente.increment("fallos", { by: 1 });
-        console.log(
-          `Fallos incrementado en 1. Nuevos fallos: ${
-            resultadoExistente.fallos + 1
-          }`
-        );
       } else {
         await Resultados.create({
           cedula,
@@ -78,11 +73,8 @@ class Perfil {
           aciertos: 0,
           fallos: 1,
         });
-        console.log("Nuevo fallo creado.");
       }
-    } catch (error) {
-      console.error("Error al verificar o actualizar el resultado:", error);
-    }
+    } catch (error) {}
   }
 
   static async aumentarAciertos(cedula, fecha) {
@@ -96,11 +88,6 @@ class Perfil {
 
       if (resultadoExistente) {
         await resultadoExistente.increment("aciertos", { by: 1 });
-        console.log(
-          `Fallos incrementado en 1. Nuevos aciertos: ${
-            resultadoExistente.aciertos + 1
-          }`
-        );
       } else {
         await Resultados.create({
           cedula,
@@ -108,11 +95,8 @@ class Perfil {
           aciertos: 1,
           fallos: 0,
         });
-        console.log("Nuevo acierto creado.");
       }
-    } catch (error) {
-      console.error("Error al verificar o actualizar el resultado:", error);
-    }
+    } catch (error) {}
   }
 
   static async obtenerResultados(cedula) {
@@ -135,7 +119,6 @@ class Perfil {
         return { cedula, resultados: resultadosJSON };
       }
     } catch (error) {
-      console.error("Error al obtener los resultados:", error);
       return { error: "Error al obtener los resultados" };
     }
   }
