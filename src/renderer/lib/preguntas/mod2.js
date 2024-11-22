@@ -1,5 +1,11 @@
 const { ipcRenderer } = require("electron");
 
+const feedback = document.querySelector("#feedbackIncorrecto");
+
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
+
 ipcRenderer.on("salir-leccion", () => {
   window.location.href = "../paginaPrincipal.html";
 });
@@ -32,6 +38,7 @@ btnPerimetroTrapecio.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(respuesta1);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -54,6 +61,7 @@ btnAreaTrapecio.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(respuesta2);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
