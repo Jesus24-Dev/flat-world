@@ -3,6 +3,11 @@ const defineCubo = document.querySelector("#defineCubo");
 const partesCubo = document.querySelector("#partesCubo");
 const calculosCubo = document.querySelector("#calculosCubo");
 const preguntaCubo = document.querySelector("#preguntaCubo");
+const feedback = document.querySelector("#feedbackIncorrecto");
+
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
 
 const { ipcRenderer } = require("electron");
 
@@ -114,6 +119,7 @@ btnCubo.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }

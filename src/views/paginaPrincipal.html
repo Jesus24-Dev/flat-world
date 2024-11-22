@@ -229,7 +229,6 @@
       verResultados.addEventListener("click", (e) => {
         resultados.classList.remove("hidden");
         const cedula = sessionStorage.getItem("cedula");
-        console.log(cedula);
         ipcRenderer
           .invoke("obtener-resultados", cedula)
           .then((resultados) => {
@@ -247,14 +246,9 @@
               numeroAciertos.innerHTML = aciertos.reduce((a, b) => a + b);
               numeroFallos.innerHTML = fallos.reduce((a, b) => a + b);
             } else {
-              console.error(
-                "No se encontraron resultados para la cédula proporcionada"
-              );
             }
           })
-          .catch((error) => {
-            console.error("Error al obtener los resultados:", error);
-          });
+          .catch((error) => {});
       });
 
       cerrarResultados.addEventListener("click", (e) => {

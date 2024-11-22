@@ -1,5 +1,11 @@
 const { ipcRenderer } = require("electron");
 
+const feedback = document.querySelector("#feedbackIncorrecto");
+
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
+
 ipcRenderer.on("salir-leccion", () => {
   window.location.href = "../paginaPrincipal.html";
 });
@@ -30,6 +36,7 @@ btnEjercicio1.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado1);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -52,6 +59,7 @@ btnEjercicio2.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado2);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -74,6 +82,7 @@ btnEjercicio3.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado3);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -96,6 +105,7 @@ btnEjercicio4.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado4);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }

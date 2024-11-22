@@ -3,7 +3,11 @@ const defineCono = document.querySelector("#defineCono");
 const partesCono = document.querySelector("#partesCono");
 const calculosCono = document.querySelector("#calculosCono");
 const preguntaCono = document.querySelector("#preguntaCono");
+const feedback = document.querySelector("#feedbackIncorrecto");
 
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
 const { ipcRenderer } = require("electron");
 
 ipcRenderer.on("salir-leccion", () => {
@@ -102,7 +106,7 @@ function avanzar(container) {
 const respuestaCono = document.querySelector("#respuestaCono");
 const btnCono = document.querySelector("#btnCono");
 
-const resultado = 94.2;
+const resultado = 94.25;
 
 btnCono.addEventListener("click", () => {
   let respuesta = respuestaCono.value;
@@ -114,6 +118,7 @@ btnCono.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }

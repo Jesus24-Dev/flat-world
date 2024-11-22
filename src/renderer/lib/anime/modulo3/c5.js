@@ -3,7 +3,11 @@ const defineCilindro = document.querySelector("#defineCilindro");
 const partesCilindro = document.querySelector("#partesCilindro");
 const calculosCilindro = document.querySelector("#calculosCilindro");
 const preguntaCilindro = document.querySelector("#preguntaCilindro");
+const feedback = document.querySelector("#feedbackIncorrecto");
 
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
 const { ipcRenderer } = require("electron");
 
 ipcRenderer.on("salir-leccion", () => {
@@ -103,7 +107,7 @@ function avanzar(container) {
 const respuestaCilindro = document.querySelector("#respuestaCilindro");
 const btnCilindro = document.querySelector("#btnCilindro");
 
-const resultado = 339.12;
+const resultado = 339.29;
 
 btnCilindro.addEventListener("click", () => {
   let respuesta = respuestaCilindro.value;
@@ -115,6 +119,7 @@ btnCilindro.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }

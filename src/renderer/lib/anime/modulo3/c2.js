@@ -3,6 +3,11 @@ const definePiramide = document.querySelector("#definePiramide");
 const partesPiramide = document.querySelector("#partesPiramide");
 const calculosPiramide = document.querySelector("#calculosPiramide");
 const preguntaPiramide = document.querySelector("#preguntaPiramide");
+const feedback = document.querySelector("#feedbackIncorrecto");
+
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
 
 const { ipcRenderer } = require("electron");
 
@@ -103,7 +108,7 @@ function avanzar(container) {
 const respuestaPiramide = document.querySelector("#respuestaPiramide");
 const btnPiramide = document.querySelector("#btnPiramide");
 
-const resultado = 20;
+const resultado = 120;
 
 btnPiramide.addEventListener("click", () => {
   let respuesta = respuestaPiramide.value;
@@ -115,6 +120,7 @@ btnPiramide.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
