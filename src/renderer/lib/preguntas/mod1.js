@@ -1,4 +1,9 @@
 const { ipcRenderer } = require("electron");
+const feedback = document.querySelector("#feedbackIncorrecto");
+
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
 
 ipcRenderer.on("salir-leccion", () => {
   window.location.href = "../paginaPrincipal.html";
@@ -57,6 +62,7 @@ btnPerimetroTriangulo1.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback("Repasa la lección Triángulo");
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -73,6 +79,7 @@ btnPerimetroTriangulo2.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback("Repasa la lección Triángulo");
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -90,6 +97,7 @@ btnAreaTriangulo.addEventListener("click", () => {
     aumentarAcierto();
   } else {
     mostrarRespuestaIncorrecta();
+    mostrarFeedback("Repasa la lección Triángulo");
     aumentarFallo();
   }
   avanzarPregunta(areaTriangulo);
@@ -105,6 +113,7 @@ btnCuadradoPerimetro.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback("Repasa la lección Cuadrilatero");
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -131,6 +140,7 @@ btnRectanguloPerimetro.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback("Repasa la lección Cuadrilatero");
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -153,6 +163,7 @@ btnCuadradoArea.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback("Repasa la lección Cuadrilatero");
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
@@ -177,6 +188,7 @@ btnRectanguloArea.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback("Repasa la lección Cuadrilatero");
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
