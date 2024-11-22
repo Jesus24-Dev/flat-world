@@ -3,6 +3,11 @@ const definePrisma = document.querySelector("#definePrisma");
 const partesPrisma = document.querySelector("#partesPrisma");
 const calculosPrisma = document.querySelector("#calculosPrisma");
 const preguntaPrisma = document.querySelector("#preguntaPrisma");
+const feedback = document.querySelector("#feedbackIncorrecto");
+
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
 
 const { ipcRenderer } = require("electron");
 
@@ -115,6 +120,7 @@ btnPrisma.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }

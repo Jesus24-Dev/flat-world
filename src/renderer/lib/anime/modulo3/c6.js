@@ -3,6 +3,11 @@ const defineEsfera = document.querySelector("#defineEsfera");
 const partesEsfera = document.querySelector("#partesEsfera");
 const calculosEsfera = document.querySelector("#calculosEsfera");
 const preguntaEsfera = document.querySelector("#preguntaEsfera");
+const feedback = document.querySelector("#feedbackIncorrecto");
+
+function mostrarFeedback(mensaje) {
+  feedback.innerHTML = mensaje;
+}
 
 const { ipcRenderer } = require("electron");
 
@@ -114,6 +119,7 @@ btnEsfera.addEventListener("click", () => {
     mostrarRespuestaCorrecta();
     aumentarAcierto();
   } else {
+    mostrarFeedback(resultado);
     mostrarRespuestaIncorrecta();
     aumentarFallo();
   }
