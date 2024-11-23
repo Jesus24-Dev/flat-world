@@ -717,16 +717,12 @@ video {
   grid-column: span 6 / span 6;
 }
 
-.col-span-8 {
-  grid-column: span 8 / span 8;
-}
-
-.col-span-9 {
-  grid-column: span 9 / span 9;
-}
-
 .col-span-7 {
   grid-column: span 7 / span 7;
+}
+
+.col-span-8 {
+  grid-column: span 8 / span 8;
 }
 
 .col-start-1 {
@@ -857,6 +853,10 @@ video {
   grid-row-start: 8;
 }
 
+.row-start-9 {
+  grid-row-start: 9;
+}
+
 .m-2 {
   margin: 0.5rem;
 }
@@ -968,6 +968,10 @@ video {
 
 .content-center {
   align-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-end {
@@ -1190,6 +1194,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.text-start {
+  text-align: start;
 }
 
 .font-Open-Sans {
